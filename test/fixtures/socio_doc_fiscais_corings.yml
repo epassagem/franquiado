@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  interessado_id: 1
+  arquivo: MyString
+  nome: MyString
+
+two:
+  interessado_id: 1
+  arquivo: MyString
+  nome: MyString

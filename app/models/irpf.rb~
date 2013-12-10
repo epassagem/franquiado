@@ -1,0 +1,2 @@
+class Irpf < ActiveRecord::Base
+end

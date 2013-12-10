@@ -1,0 +1,29 @@
+<h1>Listing socio_carteira_profs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @socio_carteira_profs.each do |socio_carteira_prof| %>
+      <tr>
+        <td><%= socio_carteira_prof.interessado_id %></td>
+        <td><%= socio_carteira_prof.arquivo %></td>
+        <td><%= link_to 'Show', socio_carteira_prof %></td>
+        <td><%= link_to 'Edit', edit_socio_carteira_prof_path(socio_carteira_prof) %></td>
+        <td><%= link_to 'Destroy', socio_carteira_prof, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Socio carteira prof', new_socio_carteira_prof_path %>

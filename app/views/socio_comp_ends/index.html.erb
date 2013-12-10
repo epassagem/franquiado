@@ -1,0 +1,29 @@
+<h1>Listing socio_comp_ends</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @socio_comp_ends.each do |socio_comp_end| %>
+      <tr>
+        <td><%= socio_comp_end.interessado_id %></td>
+        <td><%= socio_comp_end.arquivo %></td>
+        <td><%= link_to 'Show', socio_comp_end %></td>
+        <td><%= link_to 'Edit', edit_socio_comp_end_path(socio_comp_end) %></td>
+        <td><%= link_to 'Destroy', socio_comp_end, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Socio comp end', new_socio_comp_end_path %>

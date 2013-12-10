@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @socio_comp_end.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @socio_comp_end.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_socio_comp_end_path(@socio_comp_end) %> |
+<%= link_to 'Back', socio_comp_ends_path %>

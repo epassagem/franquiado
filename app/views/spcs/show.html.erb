@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @spc.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @spc.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_spc_path(@spc) %> |
+<%= link_to 'Back', spcs_path %>

@@ -1,0 +1,29 @@
+<h1>Listing irpfs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @irpfs.each do |irpf| %>
+      <tr>
+        <td><%= irpf.interessado_id %></td>
+        <td><%= irpf.arquivo %></td>
+        <td><%= link_to 'Show', irpf %></td>
+        <td><%= link_to 'Edit', edit_irpf_path(irpf) %></td>
+        <td><%= link_to 'Destroy', irpf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Irpf', new_irpf_path %>

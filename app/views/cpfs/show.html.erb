@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @cpf.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @cpf.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_cpf_path(@cpf) %> |
+<%= link_to 'Back', cpfs_path %>

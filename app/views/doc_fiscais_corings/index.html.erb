@@ -1,0 +1,31 @@
+<h1>Listing doc_fiscais_corings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th>Nome</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doc_fiscais_corings.each do |doc_fiscais_coring| %>
+      <tr>
+        <td><%= doc_fiscais_coring.interessado_id %></td>
+        <td><%= doc_fiscais_coring.arquivo %></td>
+        <td><%= doc_fiscais_coring.nome %></td>
+        <td><%= link_to 'Show', doc_fiscais_coring %></td>
+        <td><%= link_to 'Edit', edit_doc_fiscais_coring_path(doc_fiscais_coring) %></td>
+        <td><%= link_to 'Destroy', doc_fiscais_coring, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doc fiscais coring', new_doc_fiscais_coring_path %>

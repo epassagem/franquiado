@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @carteira_prof.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @carteira_prof.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_carteira_prof_path(@carteira_prof) %> |
+<%= link_to 'Back', carteira_profs_path %>

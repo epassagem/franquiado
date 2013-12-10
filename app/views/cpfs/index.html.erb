@@ -1,0 +1,29 @@
+<h1>Listing cpfs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cpfs.each do |cpf| %>
+      <tr>
+        <td><%= cpf.interessado_id %></td>
+        <td><%= cpf.arquivo %></td>
+        <td><%= link_to 'Show', cpf %></td>
+        <td><%= link_to 'Edit', edit_cpf_path(cpf) %></td>
+        <td><%= link_to 'Destroy', cpf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cpf', new_cpf_path %>

@@ -1,0 +1,25 @@
+<%= form_for(@socio_cpf) do |f| %>
+  <% if @socio_cpf.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@socio_cpf.errors.count, "error") %> prohibited this socio_cpf from being saved:</h2>
+
+      <ul>
+      <% @socio_cpf.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :interessado_id %><br>
+    <%= f.number_field :interessado_id %>
+  </div>
+  <div class="field">
+    <%= f.label :arquivo %><br>
+    <%= f.text_field :arquivo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

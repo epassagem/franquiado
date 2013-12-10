@@ -1,0 +1,25 @@
+<%= form_for(@socio_irpf) do |f| %>
+  <% if @socio_irpf.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@socio_irpf.errors.count, "error") %> prohibited this socio_irpf from being saved:</h2>
+
+      <ul>
+      <% @socio_irpf.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :interessado_id %><br>
+    <%= f.number_field :interessado_id %>
+  </div>
+  <div class="field">
+    <%= f.label :arquivo %><br>
+    <%= f.text_field :arquivo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

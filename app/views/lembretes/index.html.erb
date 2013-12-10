@@ -1,0 +1,33 @@
+<h1>Listing lembretes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Observacao</th>
+      <th>Nome</th>
+      <th>Data max</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lembretes.each do |lembrete| %>
+      <tr>
+        <td><%= lembrete.interessado_id %></td>
+        <td><%= lembrete.observacao %></td>
+        <td><%= lembrete.nome %></td>
+        <td><%= lembrete.data_max %></td>
+        <td><%= link_to 'Show', lembrete %></td>
+        <td><%= link_to 'Edit', edit_lembrete_path(lembrete) %></td>
+        <td><%= link_to 'Destroy', lembrete, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lembrete', new_lembrete_path %>

@@ -1,0 +1,29 @@
+<h1>Listing cnhs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cnhs.each do |cnh| %>
+      <tr>
+        <td><%= cnh.interessado_id %></td>
+        <td><%= cnh.arquivo %></td>
+        <td><%= link_to 'Show', cnh %></td>
+        <td><%= link_to 'Edit', edit_cnh_path(cnh) %></td>
+        <td><%= link_to 'Destroy', cnh, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cnh', new_cnh_path %>

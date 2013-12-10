@@ -1,0 +1,29 @@
+<h1>Listing socio_cnhs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @socio_cnhs.each do |socio_cnh| %>
+      <tr>
+        <td><%= socio_cnh.interessado_id %></td>
+        <td><%= socio_cnh.arquivo %></td>
+        <td><%= link_to 'Show', socio_cnh %></td>
+        <td><%= link_to 'Edit', edit_socio_cnh_path(socio_cnh) %></td>
+        <td><%= link_to 'Destroy', socio_cnh, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Socio cnh', new_socio_cnh_path %>

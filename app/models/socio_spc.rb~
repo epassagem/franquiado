@@ -1,0 +1,2 @@
+class SocioSpc < ActiveRecord::Base
+end

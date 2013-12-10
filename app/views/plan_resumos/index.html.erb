@@ -1,0 +1,29 @@
+<h1>Listing plan_resumos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plan_resumos.each do |plan_resumo| %>
+      <tr>
+        <td><%= plan_resumo.interessado_id %></td>
+        <td><%= plan_resumo.arquivo %></td>
+        <td><%= link_to 'Show', plan_resumo %></td>
+        <td><%= link_to 'Edit', edit_plan_resumo_path(plan_resumo) %></td>
+        <td><%= link_to 'Destroy', plan_resumo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plan resumo', new_plan_resumo_path %>

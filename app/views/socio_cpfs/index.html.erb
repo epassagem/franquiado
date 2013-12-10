@@ -1,0 +1,29 @@
+<h1>Listing socio_cpfs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @socio_cpfs.each do |socio_cpf| %>
+      <tr>
+        <td><%= socio_cpf.interessado_id %></td>
+        <td><%= socio_cpf.arquivo %></td>
+        <td><%= link_to 'Show', socio_cpf %></td>
+        <td><%= link_to 'Edit', edit_socio_cpf_path(socio_cpf) %></td>
+        <td><%= link_to 'Destroy', socio_cpf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Socio cpf', new_socio_cpf_path %>

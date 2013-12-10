@@ -1,0 +1,10 @@
+class CreateDadosBancos < ActiveRecord::Migration
+  def change
+    create_table :dados_bancos do |t|
+      t.integer :interessado_id
+      t.string :arquivo
+
+      t.timestamps
+    end
+  end
+end

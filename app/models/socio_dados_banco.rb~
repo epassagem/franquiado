@@ -1,0 +1,2 @@
+class SocioDadosBanco < ActiveRecord::Base
+end

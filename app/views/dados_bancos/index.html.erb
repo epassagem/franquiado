@@ -1,0 +1,29 @@
+<h1>Listing dados_bancos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dados_bancos.each do |dados_banco| %>
+      <tr>
+        <td><%= dados_banco.interessado_id %></td>
+        <td><%= dados_banco.arquivo %></td>
+        <td><%= link_to 'Show', dados_banco %></td>
+        <td><%= link_to 'Edit', edit_dados_banco_path(dados_banco) %></td>
+        <td><%= link_to 'Destroy', dados_banco, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dados banco', new_dados_banco_path %>

@@ -1,0 +1,38 @@
+<h1>Listing interessados</h1>
+
+<%= will_paginate @interessados %>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Cpf</th>
+      <th>Rg</th>
+      <th>Data Nascimento</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interessados.each do |interessado| %>
+      <tr>
+        <td><%= interessado.interessado_nome %></td>
+        <td><%= interessado.interessado_cpf %></td>
+        <td><%= interessado.interessado_rg %></td>
+        <td><%= interessado.interessado_data_nasc %></td>
+        <td><%= interessado.interessado_email %></td>
+        <td><%= link_to 'Exibir', interessado %></td>
+        <td><%= link_to 'Editar', edit_interessado_path(interessado) %></td>
+        <td><%= link_to 'Excluir', interessado, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @socio_dados_banco.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @socio_dados_banco.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_socio_dados_banco_path(@socio_dados_banco) %> |
+<%= link_to 'Back', socio_dados_bancos_path %>

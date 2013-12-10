@@ -1,0 +1,2 @@
+class DocFiscaisCoring < ActiveRecord::Base
+end

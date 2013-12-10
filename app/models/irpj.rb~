@@ -1,0 +1,2 @@
+class Irpj < ActiveRecord::Base
+end

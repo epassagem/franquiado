@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @lembrete.interessado_id %>
+</p>
+
+<p>
+  <strong>Observacao:</strong>
+  <%= @lembrete.observacao %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @lembrete.nome %>
+</p>
+
+<p>
+  <strong>Data max:</strong>
+  <%= @lembrete.data_max %>
+</p>
+
+<%= link_to 'Edit', edit_lembrete_path(@lembrete) %> |
+<%= link_to 'Back', lembretes_path %>

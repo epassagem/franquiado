@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  interessado_id: 1
+  observacao: MyString
+  nome: MyString
+  data_max: 2013-12-10
+
+two:
+  interessado_id: 1
+  observacao: MyString
+  nome: MyString
+  data_max: 2013-12-10

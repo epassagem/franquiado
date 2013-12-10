@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @cnh.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @cnh.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_cnh_path(@cnh) %> |
+<%= link_to 'Back', cnhs_path %>

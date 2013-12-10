@@ -1,0 +1,2 @@
+class SocioCpf < ActiveRecord::Base
+end

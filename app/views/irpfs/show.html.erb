@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @irpf.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @irpf.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_irpf_path(@irpf) %> |
+<%= link_to 'Back', irpfs_path %>

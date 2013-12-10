@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @comp_end.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @comp_end.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_comp_end_path(@comp_end) %> |
+<%= link_to 'Back', comp_ends_path %>

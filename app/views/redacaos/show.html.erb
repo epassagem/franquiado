@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @redacao.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @redacao.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_redacao_path(@redacao) %> |
+<%= link_to 'Back', redacaos_path %>

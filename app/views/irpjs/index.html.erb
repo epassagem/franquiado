@@ -1,0 +1,29 @@
+<h1>Listing irpjs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @irpjs.each do |irpj| %>
+      <tr>
+        <td><%= irpj.interessado_id %></td>
+        <td><%= irpj.arquivo %></td>
+        <td><%= link_to 'Show', irpj %></td>
+        <td><%= link_to 'Edit', edit_irpj_path(irpj) %></td>
+        <td><%= link_to 'Destroy', irpj, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Irpj', new_irpj_path %>

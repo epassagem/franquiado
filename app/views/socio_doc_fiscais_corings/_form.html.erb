@@ -1,0 +1,29 @@
+<%= form_for(@socio_doc_fiscais_coring) do |f| %>
+  <% if @socio_doc_fiscais_coring.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@socio_doc_fiscais_coring.errors.count, "error") %> prohibited this socio_doc_fiscais_coring from being saved:</h2>
+
+      <ul>
+      <% @socio_doc_fiscais_coring.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :interessado_id %><br>
+    <%= f.number_field :interessado_id %>
+  </div>
+  <div class="field">
+    <%= f.label :arquivo %><br>
+    <%= f.text_field :arquivo %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

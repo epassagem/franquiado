@@ -1,0 +1,33 @@
+<%= form_for(@lembrete) do |f| %>
+  <% if @lembrete.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lembrete.errors.count, "error") %> prohibited this lembrete from being saved:</h2>
+
+      <ul>
+      <% @lembrete.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :interessado_id %><br>
+    <%= f.number_field :interessado_id %>
+  </div>
+  <div class="field">
+    <%= f.label :observacao %><br>
+    <%= f.text_field :observacao %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :data_max %><br>
+    <%= f.date_select :data_max %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

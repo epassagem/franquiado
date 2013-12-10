@@ -1,0 +1,29 @@
+<h1>Listing rgs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rgs.each do |rg| %>
+      <tr>
+        <td><%= rg.interessado_id %></td>
+        <td><%= rg.arquivo %></td>
+        <td><%= link_to 'Show', rg %></td>
+        <td><%= link_to 'Edit', edit_rg_path(rg) %></td>
+        <td><%= link_to 'Destroy', rg, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rg', new_rg_path %>

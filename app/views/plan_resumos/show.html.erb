@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @plan_resumo.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @plan_resumo.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_plan_resumo_path(@plan_resumo) %> |
+<%= link_to 'Back', plan_resumos_path %>

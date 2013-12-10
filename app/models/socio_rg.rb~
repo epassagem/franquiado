@@ -1,0 +1,2 @@
+class SocioRg < ActiveRecord::Base
+end

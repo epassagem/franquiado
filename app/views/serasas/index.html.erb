@@ -1,0 +1,29 @@
+<h1>Listing serasas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @serasas.each do |serasa| %>
+      <tr>
+        <td><%= serasa.interessado_id %></td>
+        <td><%= serasa.arquivo %></td>
+        <td><%= link_to 'Show', serasa %></td>
+        <td><%= link_to 'Edit', edit_serasa_path(serasa) %></td>
+        <td><%= link_to 'Destroy', serasa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Serasa', new_serasa_path %>

@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  interessado_nome: MyString
+  interessado_cpf: MyString
+  interessado_rg: MyString
+  interessado_data_nasc: MyString
+  interessado_estado_civil: MyString
+  interessado_regime_bens: MyString
+  interessado_renda: MyString
+  interessado_sera_admin: MyString
+  interessado_dispon_integral: MyString
+  interessado_quem_sera_admin: MyString
+  interessado_resumo_prof: MyString
+  interessado_manifesto_pos: MyString
+  interessado_email: MyString
+  interessado_banco: MyString
+  interessado_agencia: MyString
+  interessado_cc: MyString
+  interessado_gerente: MyString
+  interessado_fone_banco: MyString
+
+two:
+  interessado_nome: MyString
+  interessado_cpf: MyString
+  interessado_rg: MyString
+  interessado_data_nasc: MyString
+  interessado_estado_civil: MyString
+  interessado_regime_bens: MyString
+  interessado_renda: MyString
+  interessado_sera_admin: MyString
+  interessado_dispon_integral: MyString
+  interessado_quem_sera_admin: MyString
+  interessado_resumo_prof: MyString
+  interessado_manifesto_pos: MyString
+  interessado_email: MyString
+  interessado_banco: MyString
+  interessado_agencia: MyString
+  interessado_cc: MyString
+  interessado_gerente: MyString
+  interessado_fone_banco: MyString

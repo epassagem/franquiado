@@ -1,0 +1,29 @@
+<h1>Listing observs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Observacao</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @observs.each do |observ| %>
+      <tr>
+        <td><%= observ.interessado_id %></td>
+        <td><%= observ.observacao %></td>
+        <td><%= link_to 'Show', observ %></td>
+        <td><%= link_to 'Edit', edit_observ_path(observ) %></td>
+        <td><%= link_to 'Destroy', observ, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Observ', new_observ_path %>

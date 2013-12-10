@@ -1,0 +1,29 @@
+<h1>Listing spcs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @spcs.each do |spc| %>
+      <tr>
+        <td><%= spc.interessado_id %></td>
+        <td><%= spc.arquivo %></td>
+        <td><%= link_to 'Show', spc %></td>
+        <td><%= link_to 'Edit', edit_spc_path(spc) %></td>
+        <td><%= link_to 'Destroy', spc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Spc', new_spc_path %>

@@ -1,0 +1,29 @@
+<h1>Listing carteira_profs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carteira_profs.each do |carteira_prof| %>
+      <tr>
+        <td><%= carteira_prof.interessado_id %></td>
+        <td><%= carteira_prof.arquivo %></td>
+        <td><%= link_to 'Show', carteira_prof %></td>
+        <td><%= link_to 'Edit', edit_carteira_prof_path(carteira_prof) %></td>
+        <td><%= link_to 'Destroy', carteira_prof, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Carteira prof', new_carteira_prof_path %>

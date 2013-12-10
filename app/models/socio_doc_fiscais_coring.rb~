@@ -1,0 +1,2 @@
+class SocioDocFiscaisCoring < ActiveRecord::Base
+end

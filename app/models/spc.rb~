@@ -1,0 +1,2 @@
+class Spc < ActiveRecord::Base
+end

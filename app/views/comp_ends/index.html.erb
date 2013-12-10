@@ -1,0 +1,29 @@
+<h1>Listing comp_ends</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comp_ends.each do |comp_end| %>
+      <tr>
+        <td><%= comp_end.interessado_id %></td>
+        <td><%= comp_end.arquivo %></td>
+        <td><%= link_to 'Show', comp_end %></td>
+        <td><%= link_to 'Edit', edit_comp_end_path(comp_end) %></td>
+        <td><%= link_to 'Destroy', comp_end, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comp end', new_comp_end_path %>

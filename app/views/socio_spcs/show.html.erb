@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @socio_spc.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @socio_spc.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_socio_spc_path(@socio_spc) %> |
+<%= link_to 'Back', socio_spcs_path %>

@@ -1,0 +1,89 @@
+<%= form_for(@interessado) do |f| %>
+  <% if @interessado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@interessado.errors.count, "error") %> prohibited this interessado from being saved:</h2>
+
+      <ul>
+      <% @interessado.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :interessado_nome %><br>
+    <%= f.text_field :interessado_nome %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_cpf %><br>
+    <%= f.text_field :interessado_cpf %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_rg %><br>
+    <%= f.text_field :interessado_rg %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_data_nasc %><br>
+    <%= f.text_field :interessado_data_nasc %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_estado_civil %><br>
+    <%= f.text_field :interessado_estado_civil %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_regime_bens %><br>
+    <%= f.text_field :interessado_regime_bens %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_renda %><br>
+    <%= f.text_field :interessado_renda %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_sera_admin %><br>
+    <%= f.text_field :interessado_sera_admin %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_dispon_integral %><br>
+    <%= f.text_field :interessado_dispon_integral %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_quem_sera_admin %><br>
+    <%= f.text_field :interessado_quem_sera_admin %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_resumo_prof %><br>
+    <%= f.text_field :interessado_resumo_prof %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_manifesto_pos %><br>
+    <%= f.text_field :interessado_manifesto_pos %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_email %><br>
+    <%= f.text_field :interessado_email %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_banco %><br>
+    <%= f.text_field :interessado_banco %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_agencia %><br>
+    <%= f.text_field :interessado_agencia %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_cc %><br>
+    <%= f.text_field :interessado_cc %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_gerente %><br>
+    <%= f.text_field :interessado_gerente %>
+  </div>
+  <div class="field">
+    <%= f.label :interessado_fone_banco %><br>
+    <%= f.text_field :interessado_fone_banco %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

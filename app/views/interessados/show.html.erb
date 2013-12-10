@@ -1,0 +1,269 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-xs-2">
+	<p>
+          <strong>Interessado nome:</strong>
+          <%= @interessado.interessado_nome %>
+        </p>
+        
+        <p>
+          <strong>Interessado cpf:</strong>
+          <%= @interessado.interessado_cpf %>
+        </p>
+        
+        <p>
+          <strong>Interessado rg:</strong>
+          <%= @interessado.interessado_rg %>
+        </p>
+        
+        <p>
+          <strong>Interessado data nasc:</strong>
+          <%= @interessado.interessado_data_nasc %>
+        </p>
+        
+        <p>
+          <strong>Interessado estado civil:</strong>
+          <%= @interessado.interessado_estado_civil %>
+        </p>
+        
+        <p>
+          <strong>Interessado regime bens:</strong>
+          <%= @interessado.interessado_regime_bens %>
+        </p>
+        
+        <p>
+          <strong>Interessado renda:</strong>
+          <%= @interessado.interessado_renda %>
+        </p>
+        
+        <p>
+          <strong>Interessado sera admin:</strong>
+          <%= @interessado.interessado_sera_admin %>
+        </p>
+        
+        <p>
+          <strong>Interessado dispon integral:</strong>
+          <%= @interessado.interessado_dispon_integral %>
+        </p>
+        
+        <p>
+          <strong>Interessado quem sera admin:</strong>
+          <%= @interessado.interessado_quem_sera_admin %>
+        </p>
+        
+        <p>
+          <strong>Interessado resumo prof:</strong>
+          <%= @interessado.interessado_resumo_prof %>
+        </p>
+        
+        <p>
+          <strong>Interessado manifesto pos:</strong>
+          <%= @interessado.interessado_manifesto_pos %>
+        </p>
+        
+        <p>
+          <strong>Interessado email:</strong>
+          <%= @interessado.interessado_email %>
+        </p>
+        
+        <p>
+          <strong>Interessado banco:</strong>
+          <%= @interessado.interessado_banco %>
+        </p>
+        
+        <p>
+          <strong>Interessado agencia:</strong>
+          <%= @interessado.interessado_agencia %>
+        </p>
+        
+        <p>
+          <strong>Interessado cc:</strong>
+          <%= @interessado.interessado_cc %>
+        </p>
+        
+        <p>
+          <strong>Interessado gerente:</strong>
+          <%= @interessado.interessado_gerente %>
+        </p>
+        
+        <p>
+          <strong>Interessado fone banco:</strong>
+          <%= @interessado.interessado_fone_banco %>
+        </p>
+	<%= link_to 'Editar', edit_interessado_path(@interessado) %> |
+	<%= link_to 'Voltar', interessados_path %>
+  </div>
+
+
+    <div class="col-xs-7">
+	<div class="panel-group" id="accordion">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#etapa1">
+		  <h4><span class="glyphicon glyphicon-list" style="margin-right:20px;"></span>Etapa 1</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="etapa1" class="panel-collapse collapse">
+		<!--Carta de Intenção!-->     
+		<div class="panel-body">
+		  <label>Carta de Intenção</label>
+		  <div class="row">
+		    <% @interessado.cart.each do |s| %>
+		      <div class="col-xs-3">
+		        <div class="thumbnail" style="height:380px;">
+		            <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+			    <div class="caption">
+			      <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+			      
+		            </div>
+			  </div>
+			</div>
+		      <% end %> 
+		    </div>           
+	       </div>
+                
+                <!--Carta de Intenção!-->     
+		<div class="panel-body">
+		  <label>RG</label>
+		  <div class="row">
+		    <% @interessado.rg.each do |s| %>
+		      <div class="col-xs-3">
+		        <div class="thumbnail" style="height:380px;">
+		            <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+			    <div class="caption">
+			      <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+			      
+		            </div>
+			  </div>
+			</div>
+		      <% end %> 
+		    </div>           
+	       </div>
+
+    
+		</div>
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end panel-group!-->
+ 
+    <div class="col-xs-3"><!--Inicio 3 Terceira Coluna!-->
+      <div class="panel-group" id="accordion"><!--Inicia Carta Intenção!-->
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	    <a data-toggle="collapse" data-parent="#accordion" href="#carta_inten">
+	      <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Carta de Intenção</h4>
+	    </a>
+	    </h4>
+	  </div>
+	  <div id="carta_inten" class="panel-collapse collapse">
+		<!--Carta de Intenção!-->     
+	    <div class="panel-body">
+              <div class="col-xs-6">
+        <%= @evandro %>
+	      <% @interessado.cart.each do |r| %>
+		 <h4>Carta de Intenção</h4>
+		<%= r.arquivo %>
+                
+		<%= form_for r do |f| %>
+		  <%= f.file_field :arquivo %>	
+		  <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+		<% end %>
+		
+                
+	      <%end%>
+	      </div>
+              <div class="col-xs-6" id="carta">
+                dsdfdsf
+          
+                
+        
+               
+              </div>
+	    </div>
+	</div>
+      </div><!--end panel panel-default!-->
+    </div><!--end Carta Intenção-->
+	
+	<div class="panel-group" id="accordion"><!--Documentos Fiscais e Financeiros!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#doc_fiscais">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Documentos Fiscais e Financeiros</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="doc_fiscais" class="panel-collapse collapse">
+		
+	    </div>
+	</div><!--end panel panel-default!-->
+      </div><!--end Dados Fiscais e Financeiros-->
+	
+	<div class="panel-group" id="accordion"><!--Inicia Redação!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#redacao">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Redação</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="redacao" class="panel-collapse collapse">
+		
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Redação-->
+	
+	<div class="panel-group" id="accordion"><!--Inicia Planilha Resumo!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#planilha">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Planilhas com Resumo do Modelo de Negócios</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="planilha" class="panel-collapse collapse">
+	
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Projeto Arquitetonico-->
+	
+	<div class="panel-group" id="accordion"><!--Inicia Projeto Arquitetonico!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#projeto_arqu">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Projeto Arquitetonico</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="projeto_arqu" class="panel-collapse collapse">
+		
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Projeto Arquitetonico-->
+	
+	<div class="panel-group" id="accordion"><!--Inicia Cronograma do Projeto!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#projeto_arqu">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Cronograma do Projeto</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="projeto_arqu" class="panel-collapse collapse">
+		
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Cronograma do Projeto-->
+
+    </div><!--Coluna!-->
+
+</div><!--end Row!-->
+

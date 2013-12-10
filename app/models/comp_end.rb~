@@ -1,0 +1,2 @@
+class CompEnd < ActiveRecord::Base
+end

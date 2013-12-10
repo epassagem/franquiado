@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @rg.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @rg.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_rg_path(@rg) %> |
+<%= link_to 'Back', rgs_path %>

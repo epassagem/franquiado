@@ -1,0 +1,2 @@
+class Redacao < ActiveRecord::Base
+end

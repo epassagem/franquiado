@@ -1,0 +1,2 @@
+class PlanResumo < ActiveRecord::Base
+end
