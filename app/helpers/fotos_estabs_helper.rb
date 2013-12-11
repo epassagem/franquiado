@@ -1,0 +1,2 @@
+module FotosEstabsHelper
+end

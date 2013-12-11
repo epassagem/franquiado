@@ -1,0 +1,29 @@
+<h1>Listing pre_contratos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pre_contratos.each do |pre_contrato| %>
+      <tr>
+        <td><%= pre_contrato.interessado_id %></td>
+        <td><%= pre_contrato.arquivo %></td>
+        <td><%= link_to 'Show', pre_contrato %></td>
+        <td><%= link_to 'Edit', edit_pre_contrato_path(pre_contrato) %></td>
+        <td><%= link_to 'Destroy', pre_contrato, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pre contrato', new_pre_contrato_path %>

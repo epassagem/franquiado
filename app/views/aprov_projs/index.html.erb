@@ -1,0 +1,29 @@
+<h1>Listing aprov_projs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo doc</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aprov_projs.each do |aprov_proj| %>
+      <tr>
+        <td><%= aprov_proj.interessado_id %></td>
+        <td><%= aprov_proj.arquivo_doc %></td>
+        <td><%= link_to 'Show', aprov_proj %></td>
+        <td><%= link_to 'Edit', edit_aprov_proj_path(aprov_proj) %></td>
+        <td><%= link_to 'Destroy', aprov_proj, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aprov proj', new_aprov_proj_path %>

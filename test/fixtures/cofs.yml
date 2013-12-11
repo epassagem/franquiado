@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  interessado_id: 1
+  data_fim: 2013-12-11
+  estatus: false
+  arquivo: MyString
+
+two:
+  interessado_id: 1
+  data_fim: 2013-12-11
+  estatus: false
+  arquivo: MyString

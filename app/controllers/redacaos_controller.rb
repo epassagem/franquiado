@@ -42,7 +42,7 @@ class RedacaosController < ApplicationController
   def update
     respond_to do |format|
       if @redacao.update(redacao_params)
-        format.html { redirect_to @redacao, notice: 'Redacao was successfully updated.' }
+         format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

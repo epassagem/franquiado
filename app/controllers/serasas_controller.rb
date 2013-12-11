@@ -42,7 +42,7 @@ class SerasasController < ApplicationController
   def update
     respond_to do |format|
       if @serasa.update(serasa_params)
-        format.html { redirect_to @serasa, notice: 'Serasa was successfully updated.' }
+         format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

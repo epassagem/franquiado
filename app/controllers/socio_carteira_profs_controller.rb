@@ -42,7 +42,7 @@ class SocioCarteiraProfsController < ApplicationController
   def update
     respond_to do |format|
       if @socio_carteira_prof.update(socio_carteira_prof_params)
-        format.html { redirect_to @socio_carteira_prof, notice: 'Socio carteira prof was successfully updated.' }
+         format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @operador.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @operador.arquivo %>
+</p>
+
+<p>
+  <strong>Data fim:</strong>
+  <%= @operador.data_fim %>
+</p>
+
+<p>
+  <strong>Verificador:</strong>
+  <%= @operador.verificador %>
+</p>
+
+<%= link_to 'Edit', edit_operador_path(@operador) %> |
+<%= link_to 'Back', operadors_path %>

@@ -1,4 +1,26 @@
 Franquia::Application.routes.draw do
+  resources :fotos_estabs
+
+  resources :aprov_estabs
+
+  resources :fotos_projs
+
+  resources :aprov_projs
+
+  resources :docs_pontos
+
+  resources :val_pontos
+
+  resources :operadors
+
+  resources :pre_contratos
+
+  resources :pagto_taxas
+
+  resources :cofs
+
+  resources :planilhas
+
   resources :interessados
 
   devise_for :users
@@ -9,8 +31,6 @@ Franquia::Application.routes.draw do
   resources :plan_resumos
 
   resources :redacaos
-
-#resources :carts
 
   resources :lembretes
 

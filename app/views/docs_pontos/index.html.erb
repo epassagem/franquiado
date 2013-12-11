@@ -1,0 +1,31 @@
+<h1>Listing docs_pontos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th>Nome</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @docs_pontos.each do |docs_ponto| %>
+      <tr>
+        <td><%= docs_ponto.interessado_id %></td>
+        <td><%= docs_ponto.arquivo %></td>
+        <td><%= docs_ponto.nome %></td>
+        <td><%= link_to 'Show', docs_ponto %></td>
+        <td><%= link_to 'Edit', edit_docs_ponto_path(docs_ponto) %></td>
+        <td><%= link_to 'Destroy', docs_ponto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Docs ponto', new_docs_ponto_path %>

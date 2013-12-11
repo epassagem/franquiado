@@ -42,7 +42,7 @@ class IrpfsController < ApplicationController
   def update
     respond_to do |format|
       if @irpf.update(irpf_params)
-        format.html { redirect_to @irpf, notice: 'Irpf was successfully updated.' }
+         format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

@@ -42,7 +42,7 @@ class CpfsController < ApplicationController
   def update
     respond_to do |format|
       if @cpf.update(cpf_params)
-        format.html { redirect_to @cpf, notice: 'Cpf was successfully updated.' }
+         format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

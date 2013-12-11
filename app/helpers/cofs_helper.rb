@@ -1,0 +1,2 @@
+module CofsHelper
+end

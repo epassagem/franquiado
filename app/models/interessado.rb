@@ -3,6 +3,12 @@ class Interessado < ActiveRecord::Base
 
  has_many :cart, autosave: true
  accepts_nested_attributes_for :cart
+ 
+ has_many :planilha, autosave: true
+ accepts_nested_attributes_for :planilha
+ 
+ has_many :cof, autosave: true
+ accepts_nested_attributes_for :cof
 
  has_many :carteira_prof, autosave: true
  accepts_nested_attributes_for :carteira_prof
@@ -86,8 +92,28 @@ class Interessado < ActiveRecord::Base
     has_many :socio_spc, autosave: true
  accepts_nested_attributes_for :socio_spc
  
-   has_many :socio_doc_fiscais_coring, autosave: true
- accepts_nested_attributes_for :socio_doc_fiscais_coring
+  has_many :socio_doc_fiscais_coring, autosave: true
+  accepts_nested_attributes_for :socio_doc_fiscais_coring
+  
+  has_many :pagto_taxa, autosave: true
+  accepts_nested_attributes_for :pagto_taxa
  
+  has_many :pro_contrato, autosave: true
+  accepts_nested_attributes_for :pro_contrato
 
+  has_many :operador, autosave: true
+  accepts_nested_attributes_for :operador
+
+  has_many :val_ponto, autosave: true
+  accepts_nested_attributes_for :val_ponto
+
+  has_many :docs_ponto, autosave: true
+  accepts_nested_attributes_for :docs_ponto
+
+
+  has_many :aprov_proj, autosave: true
+  accepts_nested_attributes_for :aprov_proj
+
+  has_many :aprov_estab, autosave: true
+  accepts_nested_attributes_for :aprov_estab
 end

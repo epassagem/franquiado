@@ -1,0 +1,33 @@
+<h1>Listing cofs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Data fim</th>
+      <th>Estatus</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cofs.each do |cof| %>
+      <tr>
+        <td><%= cof.interessado_id %></td>
+        <td><%= cof.data_fim %></td>
+        <td><%= cof.estatus %></td>
+        <td><%= cof.arquivo %></td>
+        <td><%= link_to 'Show', cof %></td>
+        <td><%= link_to 'Edit', edit_cof_path(cof) %></td>
+        <td><%= link_to 'Destroy', cof, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cof', new_cof_path %>

@@ -1,0 +1,29 @@
+<h1>Listing val_pontos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @val_pontos.each do |val_ponto| %>
+      <tr>
+        <td><%= val_ponto.interessado_id %></td>
+        <td><%= val_ponto.arquivo %></td>
+        <td><%= link_to 'Show', val_ponto %></td>
+        <td><%= link_to 'Edit', edit_val_ponto_path(val_ponto) %></td>
+        <td><%= link_to 'Destroy', val_ponto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Val ponto', new_val_ponto_path %>

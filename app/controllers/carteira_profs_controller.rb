@@ -42,7 +42,7 @@ class CarteiraProfsController < ApplicationController
   def update
     respond_to do |format|
       if @carteira_prof.update(carteira_prof_params)
-        format.html { redirect_to @carteira_prof, notice: 'Carteira prof was successfully updated.' }
+        format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

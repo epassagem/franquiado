@@ -1,0 +1,29 @@
+<h1>Listing fotos_estabs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aprov estab</th>
+      <th>Foto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fotos_estabs.each do |fotos_estab| %>
+      <tr>
+        <td><%= fotos_estab.aprov_estab_id %></td>
+        <td><%= fotos_estab.foto %></td>
+        <td><%= link_to 'Show', fotos_estab %></td>
+        <td><%= link_to 'Edit', edit_fotos_estab_path(fotos_estab) %></td>
+        <td><%= link_to 'Destroy', fotos_estab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fotos estab', new_fotos_estab_path %>

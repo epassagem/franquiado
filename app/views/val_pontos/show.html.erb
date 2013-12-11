@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @val_ponto.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @val_ponto.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_val_ponto_path(@val_ponto) %> |
+<%= link_to 'Back', val_pontos_path %>

@@ -42,7 +42,7 @@ class CnhsController < ApplicationController
   def update
     respond_to do |format|
       if @cnh.update(cnh_params)
-        format.html { redirect_to @cnh, notice: 'Cnh was successfully updated.' }
+        format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

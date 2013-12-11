@@ -1,0 +1,25 @@
+<%= form_for(@fotos_estab) do |f| %>
+  <% if @fotos_estab.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fotos_estab.errors.count, "error") %> prohibited this fotos_estab from being saved:</h2>
+
+      <ul>
+      <% @fotos_estab.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :aprov_estab_id %><br>
+    <%= f.number_field :aprov_estab_id %>
+  </div>
+  <div class="field">
+    <%= f.label :foto %><br>
+    <%= f.text_field :foto %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

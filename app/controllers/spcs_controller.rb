@@ -42,7 +42,7 @@ class SpcsController < ApplicationController
   def update
     respond_to do |format|
       if @spc.update(spc_params)
-        format.html { redirect_to @spc, notice: 'Spc was successfully updated.' }
+         format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

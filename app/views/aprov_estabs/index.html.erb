@@ -1,0 +1,29 @@
+<h1>Listing aprov_estabs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo doc</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aprov_estabs.each do |aprov_estab| %>
+      <tr>
+        <td><%= aprov_estab.interessado_id %></td>
+        <td><%= aprov_estab.arquivo_doc %></td>
+        <td><%= link_to 'Show', aprov_estab %></td>
+        <td><%= link_to 'Edit', edit_aprov_estab_path(aprov_estab) %></td>
+        <td><%= link_to 'Destroy', aprov_estab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aprov estab', new_aprov_estab_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @cof.interessado_id %>
+</p>
+
+<p>
+  <strong>Data fim:</strong>
+  <%= @cof.data_fim %>
+</p>
+
+<p>
+  <strong>Estatus:</strong>
+  <%= @cof.estatus %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @cof.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_cof_path(@cof) %> |
+<%= link_to 'Back', cofs_path %>

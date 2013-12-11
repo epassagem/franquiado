@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @docs_ponto.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @docs_ponto.arquivo %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @docs_ponto.nome %>
+</p>
+
+<%= link_to 'Edit', edit_docs_ponto_path(@docs_ponto) %> |
+<%= link_to 'Back', docs_pontos_path %>

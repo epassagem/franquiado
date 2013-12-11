@@ -1,0 +1,33 @@
+<h1>Listing operadors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th>Data fim</th>
+      <th>Verificador</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @operadors.each do |operador| %>
+      <tr>
+        <td><%= operador.interessado_id %></td>
+        <td><%= operador.arquivo %></td>
+        <td><%= operador.data_fim %></td>
+        <td><%= operador.verificador %></td>
+        <td><%= link_to 'Show', operador %></td>
+        <td><%= link_to 'Edit', edit_operador_path(operador) %></td>
+        <td><%= link_to 'Destroy', operador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Operador', new_operador_path %>

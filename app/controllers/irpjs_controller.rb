@@ -42,7 +42,7 @@ class IrpjsController < ApplicationController
   def update
     respond_to do |format|
       if @irpj.update(irpj_params)
-        format.html { redirect_to @irpj, notice: 'Irpj was successfully updated.' }
+         format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

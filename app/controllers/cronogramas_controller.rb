@@ -42,7 +42,7 @@ class CronogramasController < ApplicationController
   def update
     respond_to do |format|
       if @cronograma.update(cronograma_params)
-        format.html { redirect_to @cronograma, notice: 'Cronograma was successfully updated.' }
+         format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

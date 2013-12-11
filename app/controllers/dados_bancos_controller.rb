@@ -42,7 +42,7 @@ class DadosBancosController < ApplicationController
   def update
     respond_to do |format|
       if @dados_banco.update(dados_banco_params)
-        format.html { redirect_to @dados_banco, notice: 'Dados banco was successfully updated.' }
+         format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

@@ -112,6 +112,7 @@
 		  <label>Carta de Intenção</label>
 		  <div class="row">
 		    <% @interessado.cart.each do |s| %>
+                      <%if s.arquivo.present? %>
 		      <div class="col-xs-3">
 		        <div class="thumbnail" style="height:380px;">
 		            <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
@@ -121,15 +122,17 @@
 		            </div>
 			  </div>
 			</div>
+                        <%end%>
 		      <% end %> 
-		    </div>           
+		  </div>           
 	       </div>
                 
-                <!--Carta de Intenção!-->     
+                <!--RG!-->     
 		<div class="panel-body">
 		  <label>RG</label>
 		  <div class="row">
 		    <% @interessado.rg.each do |s| %>
+                    <%if s.arquivo.present? %>
 		      <div class="col-xs-3">
 		        <div class="thumbnail" style="height:380px;">
 		            <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
@@ -139,15 +142,347 @@
 		            </div>
 			  </div>
 			</div>
+                      <%end%>
+                      
 		      <% end %> 
 		    </div>           
 	       </div>
-
-    
-		</div>
+                 <!--CPF!-->     
+		<div class="panel-body">
+		  <label>CPF</label>
+		  <div class="row">
+		    <% @interessado.cpf.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+                <!--CNH!-->     
+		<div class="panel-body">
+		  <label>CNH</label>
+		  <div class="row">
+		    <% @interessado.cnh.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+                <!--Serasa!-->     
+		<div class="panel-body">
+		  <label>Serasa</label>
+		  <div class="row">
+		    <% @interessado.serasa.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+                <!--Carteira!-->     
+		<div class="panel-body">
+		  <label>Carteira Profissional</label>
+		  <div class="row">
+		    <% @interessado.carteira_prof.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+                <!--Comprovante de Endereço!-->     
+		<div class="panel-body">
+		  <label>Carteira Profissional</label>
+		  <div class="row">
+		    <% @interessado.comp_end.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+                <!--Dados Bancários!-->     
+		<div class="panel-body">
+		  <label>Dados Bancários</label>
+		  <div class="row">
+		    <% @interessado.dados_banco.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+                <!--IRPF!-->     
+		<div class="panel-body">
+		  <label>Imposto de Renda Pessoa Física</label>
+		  <div class="row">
+		    <% @interessado.irpf.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+               <!--IRPJ!-->     
+		<div class="panel-body">
+		  <label>Imposto de Renda Pessoa Jurídica</label>
+		  <div class="row">
+		    <% @interessado.irpj.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+                <!--SPC!-->     
+		<div class="panel-body">
+		  <label>SPC</label>
+		  <div class="row">
+		    <% @interessado.spc.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+                 <!--Documentos Coringas - Diversos!-->     
+		<div class="panel-body">
+		  <label>Documentos Diversos</label>
+		  <div class="row">
+		    <% @interessado.doc_fiscais_coring.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <%= s.nome %>
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+                <!--Redação!-->     
+		<div class="panel-body">
+		  <label>Redação</label>
+		  <div class="row">
+		    <% @interessado.redacao.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+                 <!--Planilha com Resumo do Modelo de Negocios!-->     
+		<div class="panel-body">
+		  <label>Planilha com Resumo do Modelo de Negocios</label>
+		  <div class="row">
+		    <% @interessado.planilha.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <%= s.nome %>
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+                <!--Projeto Arquitetônico!-->     
+		<div class="panel-body">
+		  <label>Projeto Arquitetônico</label>
+		  <div class="row">
+		    <% @interessado.proj_arquitetonico.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+                <!--Cronograma!-->     
+		<div class="panel-body">
+		  <label>Cronograma de Treinamento</label>
+		  <div class="row">
+		    <% @interessado.cronograma.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+            </div>
+         </div>
+      </div><!--end panel panel-default!-->
+      
+      <!--Parte 2!-->
+      <div class="panel-group" id="accordion">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#etapa2">
+		  <h4><span class="glyphicon glyphicon-list" style="margin-right:20px;"></span>Etapa 2</h4>
+		</a>
+	      </h4>
 	    </div>
-	</div><!--end panel panel-default!-->
-	</div><!--end panel-group!-->
+	    <div id="etapa2" class="panel-collapse collapse">
+		<!--COF!-->     
+		<div class="panel-body">
+		  <label>COF</label>
+		  <div class="row">
+                    <% @interessado.cof.each do |r| %>
+                       <%= form_for r do |f| %>
+                         <div class="field">
+                            <div class="col-xs-1">
+                           <%= f.label :estatus %><br>
+                           </div>
+                            <div class="col-xs-1">
+                           <%= f.check_box :estatus %>
+                           </div>
+                         </div>
+                         <div class="field">
+                          <div class="col-xs-1">
+                           <%= f.label :data_fim %><br>
+                           </div>
+                          <div class="col-xs-3">
+                           <%= f.date_select :data_fim %>
+                           </div>
+                         </div>  
+                         <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                       <% end %>
+                     <% end %>
+		  </div>           
+	       </div>
+            </div>
+         </div>
+      </div><!--end panel panel-default!-->
+      
+      <!--Parte 3!-->
+      <div class="panel-group" id="accordion">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#etapa3">
+		  <h4><span class="glyphicon glyphicon-list" style="margin-right:20px;"></span>Etapa 3</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="etapa3" class="panel-collapse collapse">
+		<!--Cronograma!-->     
+		<div class="panel-body">
+		  <label>Pagamento da Taxa de Franquia</label>
+		  <div class="row">
+		    <% @interessado.cronograma.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div>
+            </div>
+         </div>
+      </div><!--end panel panel-default!-->
+      
+      
+      
+    </div><!--end Col-xs-7!-->
  
     <div class="col-xs-3"><!--Inicio 3 Terceira Coluna!-->
       <div class="panel-group" id="accordion"><!--Inicia Carta Intenção!-->
@@ -160,33 +495,25 @@
 	    </h4>
 	  </div>
 	  <div id="carta_inten" class="panel-collapse collapse">
-		<!--Carta de Intenção!-->     
+	    <!--Carta de Intenção!-->     
 	    <div class="panel-body">
               <div class="col-xs-6">
-        <%= @evandro %>
-	      <% @interessado.cart.each do |r| %>
-		 <h4>Carta de Intenção</h4>
-		<%= r.arquivo %>
-                
-		<%= form_for r do |f| %>
-		  <%= f.file_field :arquivo %>	
-		  <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
-		<% end %>
-		
-                
-	      <%end%>
+                <% @interessado.cart.each do |r| %>
+                <%if r.arquivo.present?%>
+                  <%else%>
+                  <h4>Carta de Intenção</h4>
+                  <%= r.arquivo %>
+                  <%= form_for r do |f| %>
+                   <%= f.file_field :arquivo %>	
+                   <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                  <% end %>
+                  <% end %>
+                <% end %>
 	      </div>
-              <div class="col-xs-6" id="carta">
-                dsdfdsf
-          
-                
-        
-               
-              </div>
 	    </div>
-	</div>
-      </div><!--end panel panel-default!-->
-    </div><!--end Carta Intenção-->
+          </div>
+        </div><!--end panel panel-default!-->
+      </div><!--end Carta Intenção-->
 	
 	<div class="panel-group" id="accordion"><!--Documentos Fiscais e Financeiros!-->
 	  <div class="panel panel-default">
@@ -198,8 +525,177 @@
 	      </h4>
 	    </div>
 	    <div id="doc_fiscais" class="panel-collapse collapse">
-		
-	    </div>
+              <!--RG!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.rg.each do |r| %>
+                  <%if r.arquivo.present?%>
+                  <%else%>
+                    <h4>RG</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                     <%= f.file_field :arquivo %>	
+                     <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %>
+                    <% end %>
+                  <%end%>
+                </div>
+              </div>
+              <!--cpf!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.cpf.each do |r| %>
+                  <%if r.arquivo.present?%>
+                  <%else%>
+                    <h4>CPF</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                     <%= f.file_field :arquivo %>	
+                     <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %><%end%>
+                  <%end%>
+                </div>
+              </div>
+              <!--cnh!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.cnh.each do |r| %>
+                  <%if r.arquivo.present?%>
+                  <%else%>
+                    <h4>CNH</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                     <%= f.file_field :arquivo %>	
+                     <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %><%end%>
+                  <%end%>
+                </div>
+              </div>
+              <!--serasa!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.serasa.each do |r| %>
+                  <%if r.arquivo.present?%>
+                  <%else%>
+                    <h4>Serasa</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                     <%= f.file_field :arquivo %>	
+                     <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %><%end%>
+                  <%end%>
+                </div>
+              </div>
+              <!--Carteira Trabalho!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.carteira_prof.each do |r| %>
+                  <%if r.arquivo.present?%>
+                  <%else%>
+                    <h4>Carteira Profissional</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                     <%= f.file_field :arquivo %>	
+                     <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %><%end%>
+                  <%end%>
+                </div>
+              </div>
+               <!--Comprovante Endereço!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.comp_end.each do |r| %>
+                  <%if r.arquivo.present?%>
+                  <%else%>
+                    <h4>Comprovante de Endereço</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                     <%= f.file_field :arquivo %>	
+                     <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %><%end%>
+                  <%end%>
+                </div>
+              </div>
+              <!--Dados Bancarios!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.dados_banco.each do |r| %>
+                  <%if r.arquivo.present?%>
+                  <%else%>
+                    <h4>Dados Bancários</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                     <%= f.file_field :arquivo %>	
+                     <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %><%end%>
+                  <%end%>
+                </div>
+              </div>
+              <!--Imposto Renda PF!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.irpf.each do |r| %>
+                  <%if r.arquivo.present?%>
+                  <%else%>
+                    <h4>Imposto de Renda Pessoa Física</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                     <%= f.file_field :arquivo %>	
+                     <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %><%end%>
+                  <%end%>
+                </div>
+              </div>
+              <!--Imposto Renda PJ!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.irpj.each do |r| %>
+                  <%if r.arquivo.present?%>
+                  <%else%>
+                    <h4>Imposto de Renda Pessoa Jurídica</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                     <%= f.file_field :arquivo %>	
+                     <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %><%end%>
+                  <%end%>
+                </div>
+              </div>
+              <!--SPC!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.spc.each do |r| %>
+                  <%if r.arquivo.present?%>
+                  <%else%>
+                    <h4>SPC</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                     <%= f.file_field :arquivo %>	
+                     <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %><%end%>
+                  <%end%>
+                </div>
+              </div>
+               <!--Doc Fiscais!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.doc_fiscais_coring.each do |r| %>
+                  <%if r.arquivo.present?%>
+                    <%else%>
+                    <h4>Planilha Resumo do Modelo de Negócios</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                      <%= f.text_field :nome %>
+                      <%= f.file_field :arquivo %>	
+                      <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            
+              
+	    </div><!--end Div id= doc_fiscais!-->
 	</div><!--end panel panel-default!-->
       </div><!--end Dados Fiscais e Financeiros-->
 	
@@ -213,9 +709,24 @@
 	      </h4>
 	    </div>
 	    <div id="redacao" class="panel-collapse collapse">
-		
+	       <!--Redação!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.redacao.each do |r| %>
+                  <%if r.arquivo.present?%>
+                    <%else%>
+                    <h4>Redação</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                     <%= f.file_field :arquivo %>	
+                     <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
 	    </div>
-	</div><!--end panel panel-default!-->
+          </div><!--end panel panel-default!-->
 	</div><!--end Redação-->
 	
 	<div class="panel-group" id="accordion"><!--Inicia Planilha Resumo!-->
@@ -228,9 +739,25 @@
 	      </h4>
 	    </div>
 	    <div id="planilha" class="panel-collapse collapse">
-	
+               <!--Planilhas!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.planilha.each do |r| %>
+                  <%if r.arquivo.present?%>
+                    <%else%>
+                    <h4>PLanilha Resumo do Modelo de Negócios</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                      <%= f.text_field :nome %>
+                      <%= f.file_field :arquivo %>	
+                      <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
 	    </div>
-	</div><!--end panel panel-default!-->
+          </div><!--end panel panel-default!-->
 	</div><!--end Projeto Arquitetonico-->
 	
 	<div class="panel-group" id="accordion"><!--Inicia Projeto Arquitetonico!-->
@@ -243,7 +770,22 @@
 	      </h4>
 	    </div>
 	    <div id="projeto_arqu" class="panel-collapse collapse">
-		
+		<!--Projeto Arquitetônico!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.proj_arquitetonico.each do |r| %>
+                  <%if r.arquivo.present?%>
+                    <%else%>
+                    <h4>Projeto Arquitetônico</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                      <%= f.file_field :arquivo %>	
+                      <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
 	    </div>
 	</div><!--end panel panel-default!-->
 	</div><!--end Projeto Arquitetonico-->
@@ -252,13 +794,28 @@
 	  <div class="panel panel-default">
 	    <div class="panel-heading">
 	      <h4 class="panel-title">
-		<a data-toggle="collapse" data-parent="#accordion" href="#projeto_arqu">
+		<a data-toggle="collapse" data-parent="#accordion" href="#cronograma">
 		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Cronograma do Projeto</h4>
 		</a>
 	      </h4>
 	    </div>
-	    <div id="projeto_arqu" class="panel-collapse collapse">
-		
+	    <div id="cronograma" class="panel-collapse collapse">
+	      <!--Cronograma!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.cronograma.each do |r| %>
+                  <%if r.arquivo.present?%>
+                    <%else%>
+                    <h4>Cronograma de Treinamento</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                      <%= f.file_field :arquivo %>	
+                      <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
 	    </div>
 	</div><!--end panel panel-default!-->
 	</div><!--end Cronograma do Projeto-->

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131210123839) do
+ActiveRecord::Schema.define(version: 20131211151541) do
 
   create_table "carteira_profs", force: true do |t|
     t.integer  "interessado_id"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20131210123839) do
 
   create_table "cnhs", force: true do |t|
     t.integer  "interessado_id"
+    t.string   "arquivo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cofs", force: true do |t|
+    t.integer  "interessado_id"
+    t.date     "data_fim"
+    t.boolean  "estatus"
     t.string   "arquivo"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -126,6 +135,14 @@ ActiveRecord::Schema.define(version: 20131210123839) do
   create_table "plan_resumos", force: true do |t|
     t.integer  "interessado_id"
     t.string   "arquivo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "planilhas", force: true do |t|
+    t.integer  "interessado_id"
+    t.string   "arquivo"
+    t.string   "nome"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,29 @@
+<h1>Listing fotos_projs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aprov proj</th>
+      <th>Foto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fotos_projs.each do |fotos_proj| %>
+      <tr>
+        <td><%= fotos_proj.aprov_proj_id %></td>
+        <td><%= fotos_proj.foto %></td>
+        <td><%= link_to 'Show', fotos_proj %></td>
+        <td><%= link_to 'Edit', edit_fotos_proj_path(fotos_proj) %></td>
+        <td><%= link_to 'Destroy', fotos_proj, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fotos proj', new_fotos_proj_path %>
