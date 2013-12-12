@@ -31,7 +31,8 @@ class InteressadosController < ApplicationController
       @cnh.save
      
     end
-if @interessado.comp_end.count == 0
+    
+    if @interessado.comp_end.count == 0
       @comp_end = @interessado.comp_end.build
       @comp_end.save
     end
@@ -310,8 +311,166 @@ if @interessado.comp_end.count == 0
       @cof = @interessado.cof.build
       @cof.save
     end
-  
-      
+    
+    if @interessado.pagto_taxa.count == 0
+      @pagto_taxa = @interessado.pagto_taxa.build
+      @pagto_taxa.save
+    end
+    if @interessado.pagto_taxa.last.arquivo.present?
+      @pagto_taxa = @interessado.pagto_taxa.build
+      @pagto_taxa.save
+    end
+    
+    
+    if @interessado.operador.count == 0
+      @operador = @interessado.operador.build
+      @operador.save
+    end
+    if @interessado.operador.last.arquivo.present?
+      @operador = @interessado.operador.build
+      @operador.save
+    end
+    
+    if @interessado.consultor.count == 0
+      @consultor = @interessado.consultor.build
+      @consultor.save
+    end
+    if @interessado.consultor.last.arquivo.present?
+      @consultor = @interessado.consultor.build
+      @consultor.save
+    end
+    
+    if @interessado.coordenador.count == 0
+      @coordenador = @interessado.coordenador.build
+      @coordenador.save
+    end
+    if @interessado.coordenador.last.arquivo.present?
+      @coordenador = @interessado.coordenador.build
+      @coordenador.save
+    end
+    
+    if @interessado.professor.count == 0
+      @professor = @interessado.professor.build
+      @professor.save
+    end
+    if @interessado.professor.last.arquivo.present?
+      @professor = @interessado.professor.build
+      @professor.save
+    end
+    
+    if @interessado.pre_contrato.count == 0
+      @pre_contrato = @interessado.pre_contrato.build
+      @pre_contrato.save
+    end
+    if @interessado.pre_contrato.last.arquivo.present?
+      @pre_contrato = @interessado.pre_contrato.build
+      @pre_contrato.save
+    end
+    
+    if @interessado.val_ponto.count == 0
+      @val_ponto = @interessado.val_ponto.build
+      @val_ponto.save
+    end
+    if @interessado.val_ponto.last.arquivo.present?
+      @val_ponto = @interessado.val_ponto.build
+      @val_ponto.save
+    end
+    
+    if @interessado.docs_ponto.count == 0
+      @docs_ponto = @interessado.docs_ponto.build
+      @docs_ponto.save
+    end
+    if @interessado.docs_ponto.last.arquivo.present?
+      @docs_ponto = @interessado.docs_ponto.build
+      @docs_ponto.save
+    end
+    
+    /Aprovação do Projeto/
+    if @interessado.aprov_proj.count == 0
+      @aprov_proj = @interessado.aprov_proj.build
+      @aprov_proj.save
+    end
+    if @interessado.aprov_proj.last.arquivo_doc.present?
+      @aprov_proj = @interessado.aprov_proj.build
+      @aprov_proj.save
+    end
+    
+    /Fotos do Projeto /
+    @interessado.aprov_proj.each do |r|
+      if r.fotos_proj.count == 0
+        @fotos_proj = r.fotos_proj.build
+        @fotos_proj.save
+      end
+      if r.fotos_proj.last.foto.present?
+        @fotos_proj = r.fotos_proj.build
+        @fotos_proj.save
+      end
+    end
+    
+    /Aprovação do Estabelecimento/
+    if @interessado.aprov_estab.count == 0
+      @aprov_estab = @interessado.aprov_estab.build
+      @aprov_estab.save
+    end
+    if @interessado.aprov_estab.last.arquivo_doc.present?
+      @aprov_estab = @interessado.aprov_estab.build
+      @aprov_estab.save
+    end
+    
+    /Fotos do Estabelecimento/
+    @interessado.aprov_estab.each do |r|
+      if r.fotos_estab.count == 0
+        @fotos_estab = r.fotos_estab.build
+        @fotos_estab.save
+      end
+      if r.fotos_estab.last.foto.present?
+        @fotos_estab = r.fotos_estab.build
+        @fotos_estab.save
+      end
+    end
+    
+    /Contrato/
+    if @interessado.contrato.count == 0
+      @contrato = @interessado.contrato.build
+      @contrato.save
+    end
+    if @interessado.contrato.last.arquivo.present?
+      @contrato = @interessado.contrato.build
+      @contrato.save
+    end
+    
+    /Marketing/
+    if @interessado.market.count == 0
+      @market = @interessado.market.build
+      @market.save
+    end
+    if @interessado.market.last.arquivo.present?
+      @market = @interessado.market.build
+      @market.save
+    end
+    
+    /Aprovação do Estabelecimento/
+    if @interessado.inauguracao.count == 0
+      @inauguracao = @interessado.inauguracao.build
+      @inauguracao.save
+    end
+    if @interessado.inauguracao.last.arquivo_doc.present?
+      @inauguracao = @interessado.inauguracao.build
+      @inauguracao.save
+    end
+    
+    /Fotos do Estabelecimento/
+    @interessado.inauguracao.each do |r|
+      if r.fotos_in.count == 0
+        @fotos_in = r.fotos_in.build
+        @fotos_in.save
+      end
+      if r.fotos_in.last.foto.present?
+        @fotos_in = r.fotos_in.build
+        @fotos_in.save
+      end
+    end
+    
   end
       
 
@@ -362,6 +521,28 @@ if @interessado.comp_end.count == 0
     @socio_rg = @interessado.socio_rg.build
     @socio_serasa = @interessado.socio_serasa.build
     @socio_spc = @interessado.socio_spc.build
+    
+    @pagto_taxa = @interessado.pagto_taxa.build
+    @pre_contrato = @interessado.pre_contrato.build
+    @operador = @interessado.operador.build
+    @coordenador = @interessado.coordenador.build
+    @consultor = @interessado.consultor.build
+    @professor = @interessado.professor.build
+    @val_ponto = @interessado.val_ponto.build
+    @docs_ponto = @interessado.docs_ponto.build
+    
+    @aprov_proj = @interessado.aprov_proj.build
+    @fotos_proj = @aprov_proj.fotos_proj.build
+    
+    @aprov_estab = @interessado.aprov_estab.build
+    @fotos_estab = @aprov_estab.fotos_estab.build
+    
+    @contrato = @interessado.contrato.build
+    @market = @interessado.market.build
+    
+    @inauguracao = @interessado.inauguracao.build
+    @fotos_in = @inauguracao.fotos_in.build
+    
 
     respond_to do |format|
       if @interessado.save
@@ -406,6 +587,6 @@ if @interessado.comp_end.count == 0
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def interessado_params
-      params.require(:interessado).permit(:interessado_nome, :interessado_cpf, :cof, :estatus, :interessado_rg, :interessado_data_nasc, :interessado_estado_civil, :interessado_regime_bens, :interessado_renda, :interessado_sera_admin, :interessado_dispon_integral, :interessado_quem_sera_admin, :interessado_resumo_prof, :interessado_manifesto_pos, :interessado_email, :interessado_banco, :interessado_agencia, :interessado_cc, :interessado_gerente, :interessado_fone_banco, :cart, :carteira_prof, :cnh, :comp_end, :cpf, :dados_banco, :doc_fiscais_coring, :irpf, :irpj,  :rg, :serasa, :spc, :lembrete, :observ, :plan_resumo, :proj_arquitetonico, :redacao, :cronograma, :socio_carteira_prof, :socio_cnh, :socio_comp_end, :socio_cpf, :socio_dados_banco, :socio_doc_fiscais_coring, :socio_irpf, :socio_irpj,  :socio_rg, :socio_serasa, :socio_spc)
+      params.require(:interessado).permit(:interessado_nome, :inauguracao, :contrato, :market, :fotos_in, :coordenador, :professor, :consultor, :interessado_cpf, :pagto_taxa, :pre_contrato, :operador, :val_ponto, :docs_ponto, :aprov_proj, :fotos_proj, :aprov_estab, :fotos_estab, :cof, :estatus, :interessado_rg, :interessado_data_nasc, :interessado_estado_civil, :interessado_regime_bens, :interessado_renda, :interessado_sera_admin, :interessado_dispon_integral, :interessado_quem_sera_admin, :interessado_resumo_prof, :interessado_manifesto_pos, :interessado_email, :interessado_banco, :interessado_agencia, :interessado_cc, :interessado_gerente, :interessado_fone_banco, :cart, :carteira_prof, :cnh, :comp_end, :cpf, :dados_banco, :doc_fiscais_coring, :irpf, :irpj,  :rg, :serasa, :spc, :lembrete, :observ, :plan_resumo, :proj_arquitetonico, :redacao, :cronograma, :socio_carteira_prof, :socio_cnh, :socio_comp_end, :socio_cpf, :socio_dados_banco, :socio_doc_fiscais_coring, :socio_irpf, :socio_irpj,  :socio_rg, :socio_serasa, :socio_spc)
     end
 end

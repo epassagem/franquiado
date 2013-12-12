@@ -42,7 +42,7 @@ class PagtoTaxasController < ApplicationController
   def update
     respond_to do |format|
       if @pagto_taxa.update(pagto_taxa_params)
-        format.html { redirect_to @pagto_taxa, notice: 'Pagto taxa was successfully updated.' }
+       format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

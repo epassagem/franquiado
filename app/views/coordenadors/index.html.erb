@@ -1,0 +1,33 @@
+<h1>Listing coordenadors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th>Data fim</th>
+      <th>Verificador</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coordenadors.each do |coordenador| %>
+      <tr>
+        <td><%= coordenador.interessado_id %></td>
+        <td><%= coordenador.arquivo %></td>
+        <td><%= coordenador.data_fim %></td>
+        <td><%= coordenador.verificador %></td>
+        <td><%= link_to 'Show', coordenador %></td>
+        <td><%= link_to 'Edit', edit_coordenador_path(coordenador) %></td>
+        <td><%= link_to 'Destroy', coordenador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coordenador', new_coordenador_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  interessado_id: 1
+  arquivo_doc: MyString
+  data_start: 2013-12-12
+  data_end: 2013-12-12
+
+two:
+  interessado_id: 1
+  arquivo_doc: MyString
+  data_start: 2013-12-12
+  data_end: 2013-12-12

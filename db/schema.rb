@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131211151541) do
+ActiveRecord::Schema.define(version: 20131212173011) do
+
+  create_table "aprov_estabs", force: true do |t|
+    t.integer  "interessado_id"
+    t.string   "arquivo_doc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "aprov_projs", force: true do |t|
+    t.integer  "interessado_id"
+    t.string   "arquivo_doc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "carteira_profs", force: true do |t|
     t.integer  "interessado_id"
@@ -50,6 +64,31 @@ ActiveRecord::Schema.define(version: 20131211151541) do
     t.datetime "updated_at"
   end
 
+  create_table "consultors", force: true do |t|
+    t.integer  "interessado_id"
+    t.string   "arquivo"
+    t.date     "data_fim"
+    t.boolean  "verificador"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contratos", force: true do |t|
+    t.integer  "interessado_id"
+    t.string   "arquivo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "coordenadors", force: true do |t|
+    t.integer  "interessado_id"
+    t.string   "arquivo"
+    t.date     "data_fim"
+    t.boolean  "verificador"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "cpfs", force: true do |t|
     t.integer  "interessado_id"
     t.string   "arquivo"
@@ -75,6 +114,44 @@ ActiveRecord::Schema.define(version: 20131211151541) do
     t.integer  "interessado_id"
     t.string   "arquivo"
     t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "docs_pontos", force: true do |t|
+    t.integer  "interessado_id"
+    t.string   "arquivo"
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fotos_estabs", force: true do |t|
+    t.integer  "aprov_estab_id"
+    t.string   "foto"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fotos_ins", force: true do |t|
+    t.integer  "inauguracao_id"
+    t.string   "foto"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fotos_projs", force: true do |t|
+    t.integer  "aprov_proj_id"
+    t.string   "foto"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "inauguracaos", force: true do |t|
+    t.integer  "interessado_id"
+    t.string   "arquivo_doc"
+    t.date     "data_start"
+    t.date     "data_end"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -125,9 +202,33 @@ ActiveRecord::Schema.define(version: 20131211151541) do
     t.datetime "updated_at"
   end
 
+  create_table "markets", force: true do |t|
+    t.integer  "interessado_id"
+    t.string   "arquivo"
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "observs", force: true do |t|
     t.integer  "interessado_id"
     t.string   "observacao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "operadors", force: true do |t|
+    t.integer  "interessado_id"
+    t.string   "arquivo"
+    t.date     "data_fim"
+    t.boolean  "verificador"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pagto_taxas", force: true do |t|
+    t.integer  "interessado_id"
+    t.string   "arquivo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -143,6 +244,22 @@ ActiveRecord::Schema.define(version: 20131211151541) do
     t.integer  "interessado_id"
     t.string   "arquivo"
     t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pre_contratos", force: true do |t|
+    t.integer  "interessado_id"
+    t.string   "arquivo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "professors", force: true do |t|
+    t.integer  "interessado_id"
+    t.string   "arquivo"
+    t.date     "data_fim"
+    t.boolean  "verificador"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -278,5 +395,12 @@ ActiveRecord::Schema.define(version: 20131211151541) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "val_pontos", force: true do |t|
+    t.integer  "interessado_id"
+    t.string   "arquivo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

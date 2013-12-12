@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @inauguracao.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo doc:</strong>
+  <%= @inauguracao.arquivo_doc %>
+</p>
+
+<p>
+  <strong>Data start:</strong>
+  <%= @inauguracao.data_start %>
+</p>
+
+<p>
+  <strong>Data end:</strong>
+  <%= @inauguracao.data_end %>
+</p>
+
+<%= link_to 'Edit', edit_inauguracao_path(@inauguracao) %> |
+<%= link_to 'Back', inauguracaos_path %>

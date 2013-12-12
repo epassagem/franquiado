@@ -42,7 +42,7 @@ class DocsPontosController < ApplicationController
   def update
     respond_to do |format|
       if @docs_ponto.update(docs_ponto_params)
-        format.html { redirect_to @docs_ponto, notice: 'Docs ponto was successfully updated.' }
+        format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

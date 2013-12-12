@@ -458,11 +458,11 @@
 	      </h4>
 	    </div>
 	    <div id="etapa3" class="panel-collapse collapse">
-		<!--Cronograma!-->     
+		<!--Pagamento Taxa Franquia!-->     
 		<div class="panel-body">
 		  <label>Pagamento da Taxa de Franquia</label>
 		  <div class="row">
-		    <% @interessado.cronograma.each do |s| %>
+		    <% @interessado.pagto_taxa.each do |s| %>
                       <%if s.arquivo.present? %>
                         <div class="col-xs-3">
                           <div class="thumbnail" style="height:380px;">
@@ -476,11 +476,332 @@
 		    <% end %> 
 		  </div>           
 	       </div>
+                <!--Pre Contrato!-->     
+		<div class="panel-body">
+		  <label>Pré Contrato</label>
+		  <div class="row">
+		    <% @interessado.pre_contrato.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div><!--end Panel-Body!-->
+               <!--Treinamento Operador!-->     
+		<div class="panel-body">
+		  <label>Treinamento Operador da Franquia</label>
+		  <div class="row">
+                    <% @interessado.operador.each do |r| %>
+                       <%= form_for r do |f| %>
+                         <div class="field">
+                            <div class="col-xs-3">
+                           <%= f.label :"Finalizado Treinamento?" %><br>
+                           </div>
+                            <div class="col-xs-1" style="margin-left: -10%">
+                           <%= f.check_box :verificador %>
+                           </div>
+                         </div>
+                         <div class="field">
+                          <div class="col-xs-1">
+                           <%= f.label :data_fim %><br>
+                           </div>
+                          <div class="col-xs-3">
+                           <%= f.date_select :data_fim %>
+                           </div>
+                         </div>  
+                         <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                       <% end %>
+                     <% end %>
+		  </div>           
+	       </div><!--end Panel-Body!-->
+               <!--Treinamento Consultor!-->     
+		<div class="panel-body">
+		  <label>Treinamento Consultor Comercial</label>
+		  <div class="row">
+                    <% @interessado.consultor.each do |r| %>
+                       <%= form_for r do |f| %>
+                         <div class="field">
+                            <div class="col-xs-3">
+                           <%= f.label :"Finalizado Treinamento?" %><br>
+                           </div>
+                            <div class="col-xs-1" style="margin-left: -10%">
+                           <%= f.check_box :verificador %>
+                           </div>
+                         </div>
+                         <div class="field">
+                          <div class="col-xs-1">
+                           <%= f.label :data_fim %><br>
+                           </div>
+                          <div class="col-xs-3">
+                           <%= f.date_select :data_fim %>
+                           </div>
+                         </div>  
+                         <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                       <% end %>
+                     <% end %>
+		  </div>           
+	       </div><!--end Panel-Body!-->
+               <!--Treinamento Coordenador!-->     
+		<div class="panel-body">
+		  <label>Treinamento Coordenador Pedagógico</label>
+		  <div class="row">
+                    <% @interessado.coordenador.each do |r| %>
+                       <%= form_for r do |f| %>
+                         <div class="field">
+                            <div class="col-xs-3">
+                           <%= f.label :"Finalizado Treinamento?" %><br>
+                           </div>
+                            <div class="col-xs-1" style="margin-left: -10%">
+                           <%= f.check_box :verificador %>
+                           </div>
+                         </div>
+                         <div class="field">
+                          <div class="col-xs-1">
+                           <%= f.label :data_fim %><br>
+                           </div>
+                          <div class="col-xs-3">
+                           <%= f.date_select :data_fim %>
+                           </div>
+                         </div>  
+                         <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                       <% end %>
+                     <% end %>
+		  </div>           
+	       </div><!--end Panel-Body!-->
+               <!--Treinamento Professor!-->     
+		<div class="panel-body">
+		  <label>Treinamento Professor Titular</label>
+		  <div class="row">
+                    <% @interessado.professor.each do |r| %>
+                       <%= form_for r do |f| %>
+                         <div class="field">
+                            <div class="col-xs-3">
+                           <%= f.label :"Finalizado Treinamento?" %><br>
+                           </div>
+                            <div class="col-xs-1" style="margin-left: -10%">
+                           <%= f.check_box :verificador %>
+                           </div>
+                         </div>
+                         <div class="field">
+                          <div class="col-xs-1">
+                           <%= f.label :data_fim %><br>
+                           </div>
+                          <div class="col-xs-3">
+                           <%= f.date_select :data_fim %>
+                           </div>
+                         </div>  
+                         <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                       <% end %>
+                     <% end %>
+		  </div>           
+	       </div><!--end Panel-Body!-->
+               <!--Validação Ponto Comercial!-->     
+		<div class="panel-body">
+		  <label>Validação do Ponto Comercial</label>
+		  <div class="row">
+		    <% @interessado.val_ponto.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div><!--end Panel-Body!-->
+               <!--Documentos Ponto Comercial!-->     
+		<div class="panel-body">
+		  <label>Documentos do Ponto Comercial</label>
+		  <div class="row">
+		    <% @interessado.docs_ponto.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div><!--end Panel-Body!-->
+               
+               <!--Aprovação Projeto!-->     
+		<div class="panel-body">
+		  <label>Aprovação Projeto Arquitetônico</label>
+		  <div class="row">
+		    <% @interessado.aprov_proj.each do |s| %>
+                      <%if s.arquivo_doc.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo_doc.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo_doc.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>
+                  <label>Fotos</label>
+                  <div class=row" style="margin-left:-1.5%">                    
+                    <% @interessado.aprov_proj.each do |s| %>
+                      <% s.fotos_proj.each do |r|%>
+                        <%if r.foto.present? %>
+                          <div class="col-xs-3">
+                            <div class="thumbnail" style="height:380px;">
+                                <%= image_tag r.foto.to_s, :class =>"thumbnail" %> 
+                                <div class="caption">
+                                  <%= link_to ' baixar',  r.foto.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                                </div>
+                            </div>
+                          </div>
+                        <%end%>
+                      <%end%>
+		    <% end %> 
+                  </div>
+	       </div><!--end Panel-Body!-->
+               
+               <!--Aprovação Estabelecimento Comercial!-->     
+		<div class="panel-body">
+		  <label>Aprovação Estabelecimento Comercial</label>
+		  <div class="row">
+		    <% @interessado.aprov_estab.each do |s| %>
+                      <%if s.arquivo_doc.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo_doc.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo_doc.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>
+                  <label>Fotos</label>
+                  <div class=row" style="margin-left:-1.5%">                    
+                    <% @interessado.aprov_estab.each do |s| %>
+                      <% s.fotos_estab.each do |r|%>
+                        <%if r.foto.present? %>
+                          <div class="col-xs-3">
+                            <div class="thumbnail" style="height:380px;">
+                                <%= image_tag r.foto.to_s, :class =>"thumbnail" %> 
+                                <div class="caption">
+                                  <%= link_to ' baixar',  r.foto.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                                </div>
+                            </div>
+                          </div>
+                        <%end%>
+                      <%end%>
+		    <% end %> 
+                  </div>
+	       </div><!--end Panel-Body!-->
             </div>
          </div>
       </div><!--end panel panel-default!-->
       
-      
+      <!--Parte 4!-->
+      <div class="panel-group" id="accordion">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#etapa4">
+		  <h4><span class="glyphicon glyphicon-list" style="margin-right:20px;"></span>Etapa 4</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="etapa4" class="panel-collapse collapse">
+		<!--Contrato!-->     
+		<div class="panel-body">
+		  <label>Contrato</label>
+		  <div class="row">
+		    <% @interessado.contrato.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div><!--end Panel-Body!-->
+               <!--Market!-->     
+		<div class="panel-body">
+		  <label>Capanha de Marketing</label>
+		  <div class="row">
+		    <% @interessado.market.each do |s| %>
+                      <%if s.arquivo.present? %>
+                        <div class="col-xs-3">
+                          <%= s.nome%>
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>           
+	       </div><!--end Panel-Body!-->
+               
+               <!--Inauguração Estabelecimento Comercial!-->     
+		<div class="panel-body">
+		  <label>Inauguração Estabelecimento Comercial</label>
+		  <div class="row">
+		    <% @interessado.inauguracao.each do |s| %>
+                      <%if s.arquivo_doc.present? %>
+                        <div class="col-xs-3">
+                          <div class="thumbnail" style="height:380px;">
+                              <%= image_tag s.arquivo_doc.to_s, :class =>"thumbnail" %> 
+                              <div class="caption">
+                                <%= link_to ' baixar',  s.arquivo_doc.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                              </div>
+                          </div>
+                        </div>
+                      <%end%>
+		    <% end %> 
+		  </div>
+                  <label>Fotos</label>
+                  <div class=row" style="margin-left:-1.5%">                    
+                    <% @interessado.inauguracao.each do |s| %>
+                      <% s.fotos_in.each do |r|%>
+                        <%if r.foto.present? %>
+                          <div class="col-xs-3">
+                            <div class="thumbnail" style="height:380px;">
+                                <%= image_tag r.foto.to_s, :class =>"thumbnail" %> 
+                                <div class="caption">
+                                  <%= link_to ' baixar',  r.foto.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                                </div>
+                            </div>
+                          </div>
+                        <%end%>
+                      <%end%>
+		    <% end %> 
+                  </div>
+	       </div><!--end Panel-Body!-->
+               
+            </div>
+         </div>
+      </div><!--end panel panel-default!-->
       
     </div><!--end Col-xs-7!-->
  
@@ -819,6 +1140,328 @@
 	    </div>
 	</div><!--end panel panel-default!-->
 	</div><!--end Cronograma do Projeto-->
+        
+        <div class="panel-group" id="accordion"><!--Inicia Pagto Taxa!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#pagto_taxa">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Pagamento da Taxa de Franquia</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="pagto_taxa" class="panel-collapse collapse">
+	      <!--Pagamento Taxa Franquia!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.pagto_taxa.each do |r| %>
+                  <%if r.arquivo.present?%>
+                    <%else%>
+                    <h4>Pagamento da Taxa de Franquia</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                      <%= f.file_field :arquivo %>	
+                      <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Pagamento Taxa Franquia-->
+        
+        <div class="panel-group" id="accordion"><!--Inicia Pré Contrato!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#pre_contrato">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Pré Contrato</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="pre_contrato" class="panel-collapse collapse">
+	      <!--Pré Contrato!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.pre_contrato.each do |r| %>
+                  <%if r.arquivo.present?%>
+                    <%else%>
+                    <h4>Pré Contrato</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                      <%= f.file_field :arquivo %>	
+                      <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Pré Contrato-->
+        
+        <div class="panel-group" id="accordion"><!--Validação do Ponto Comercial!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#val_ponto">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Validação do Ponto Comercial</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="val_ponto" class="panel-collapse collapse">
+	      <!--Validação do Ponto Comercial!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.val_ponto.each do |r| %>
+                  <%if r.arquivo.present?%>
+                    <%else%>
+                    <h4>Validação do Ponto Comercial</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                      <%= f.file_field :arquivo %>	
+                      <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Validação do Ponto Comercial-->
+        
+        <div class="panel-group" id="accordion"><!--Documento do Ponto Comercial!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#docs_ponto">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Documentos do Ponto Comercial</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="docs_ponto" class="panel-collapse collapse">
+	      <!--Documentos do Ponto Comercial!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.docs_ponto.each do |r| %>
+                  <%if r.arquivo.present?%>
+                    <%else%>
+                    <h4>Documentos do Ponto Comercial</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                      <%= f.file_field :arquivo %>	
+                      <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Documentosdo Ponto Comercial-->
+        
+        <div class="panel-group" id="accordion"><!--Aprovação do Projeto!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#aprov_proj">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Aprovação do Projeto Arquitetônico</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="aprov_proj" class="panel-collapse collapse">
+	      <!--Aprovação do Projeto!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                    <% @interessado.aprov_proj.each do |r| %>
+                      <%if r.arquivo_doc.present?%>
+                        <%else%>
+                         <h4>Aprovação do Projeto Arquitetônico</h4>
+                        <%= form_for r do |f| %>
+                          <%= f.file_field :arquivo_doc %>	
+                          <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                        <% end %>                       
+                      <% end %>
+                  <% end %>
+                </div>
+                
+                <div class="col-xs-6">
+                  <% @interessado.aprov_proj.each do |r| %>
+                      <% r.fotos_proj.each do |s| %>
+                        <%if s.foto.nil?%>
+                        <%else%>
+                          <h4>Fotos Projeto Arquitetônico</h4>
+                          <%= s.foto %>
+                          <%= form_for s do |f| %>
+                            <%= f.file_field :foto %>	
+                            <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                          <% end %>
+                        <% end %>                
+                      <% end %>
+                  <% end %>
+                </div>
+              </div>
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Aprovação do Projeto Arquitetônico-->
+        
+        <div class="panel-group" id="accordion"><!--Aprovação do Estabelecimento!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#aprov_estab">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Aprovação do Estabelecimento</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="aprov_estab" class="panel-collapse collapse">
+	      <!--Aprovação do Estabelecimento!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                    <% @interessado.aprov_estab.each do |r| %>
+                      <%if r.arquivo_doc.nil?%>
+                        <%else%>
+                         <h4>Aprovação do Estabelecimento</h4>
+                        <%= r.arquivo_doc%>
+                        <%= form_for r do |f| %>
+                          <%= f.file_field :arquivo_doc %>	
+                          <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                        <% end %>                       
+                      <% end %>
+                  <% end %>
+                </div>
+                
+                <div class="col-xs-6">
+                  <% @interessado.aprov_estab.each do |r| %>
+                      <% r.fotos_estab.each do |s| %>
+                        <%if s.foto.nil?%>
+                        <%else%>
+                          <h4>Fotos Estabelecimento</h4>
+                          <%= s.foto %>
+                          <%= form_for s do |f| %>
+                            <%= f.file_field :foto %>	
+                            <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                          <% end %>
+                        <% end %>                
+                      <% end %>
+                  <% end %>
+                </div>
+              </div>
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Aprovação do Projeto Estabelecimento-->
+        
+        <div class="panel-group" id="accordion"><!--Inicia Contrato!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#contrato">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Contrato</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="contrato" class="panel-collapse collapse">
+	       <!--Contrato!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.contrato.each do |r| %>
+                  <%if r.arquivo.present?%>
+                    <%else%>
+                    <h4>Contrato Assinado</h4>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                     <%= f.file_field :arquivo %>	
+                     <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+	    </div>
+          </div><!--end panel panel-default!-->
+	</div><!--end Contrato-->
+        
+        <div class="panel-group" id="accordion"><!--Inicia Campanha de Marketing!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#marketing">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Campanha de Marketing</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="marketing" class="panel-collapse collapse">
+	       <!--Campanha de Marketing!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                  <% @interessado.market.each do |r| %>
+                  <%if r.arquivo.present?%>
+                    <%else%>
+                    <h4>Campanha de Marketing</h4>
+                    <%= r.nome %>
+                    <%= r.arquivo %>
+                    <%= form_for r do |f| %>
+                      <%= f.text_field :nome %>
+                      <%= f.file_field :arquivo %>	
+                      <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                    <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+	    </div>
+          </div><!--end panel panel-default!-->
+	</div><!--end Contrato-->
+        <div class="panel-group" id="accordion"><!--Inauguração do Estabelecimento!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#inauguracao">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Inauguração do Estabelecimento</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="inauguracao" class="panel-collapse collapse">
+	      <!--Inauguração do Estabelecimento!-->     
+              <div class="panel-body">
+                <div class="col-xs-6">
+                    <% @interessado.inauguracao.each do |r| %>
+                      <%if r.arquivo_doc.nil?%>
+                        <%else%>
+                         <h4>Inauguração do Estabelecimento</h4>
+                        <%= r.arquivo_doc%>
+                        <%= form_for r do |f| %>
+                          <%= f.file_field :arquivo_doc %>	
+                          <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                        <% end %>                       
+                      <% end %>
+                  <% end %>
+                </div>
+                
+                <div class="col-xs-6">
+                  <% @interessado.inauguracao.each do |r| %>
+                      <% r.fotos_in.each do |s| %>
+                        <%if s.foto.nil?%>
+                        <%else%>
+                          <h4>Fotos Inauguração</h4>
+                          <%= s.foto %>
+                          <%= form_for s do |f| %>
+                            <%= f.file_field :foto %>	
+                            <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+                          <% end %>
+                        <% end %>                
+                      <% end %>
+                  <% end %>
+                </div>
+              </div>
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Aprovação do Inauguração Estabelecimento-->
+        
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Aprovação do Projeto Estabelecimento-->
 
     </div><!--Coluna!-->
 

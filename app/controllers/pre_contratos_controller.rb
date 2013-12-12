@@ -42,7 +42,7 @@ class PreContratosController < ApplicationController
   def update
     respond_to do |format|
       if @pre_contrato.update(pre_contrato_params)
-        format.html { redirect_to @pre_contrato, notice: 'Pre contrato was successfully updated.' }
+        format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

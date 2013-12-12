@@ -1,4 +1,18 @@
 Franquia::Application.routes.draw do
+  resources :fotos_ins
+
+  resources :inauguracaos
+
+  resources :markets
+
+  resources :contratos
+
+  resources :professors
+
+  resources :coordenadors
+
+  resources :consultors
+
   resources :fotos_estabs
 
   resources :aprov_estabs

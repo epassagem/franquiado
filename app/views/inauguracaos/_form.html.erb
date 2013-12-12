@@ -1,0 +1,33 @@
+<%= form_for(@inauguracao) do |f| %>
+  <% if @inauguracao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inauguracao.errors.count, "error") %> prohibited this inauguracao from being saved:</h2>
+
+      <ul>
+      <% @inauguracao.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :interessado_id %><br>
+    <%= f.number_field :interessado_id %>
+  </div>
+  <div class="field">
+    <%= f.label :arquivo_doc %><br>
+    <%= f.text_field :arquivo_doc %>
+  </div>
+  <div class="field">
+    <%= f.label :data_start %><br>
+    <%= f.date_select :data_start %>
+  </div>
+  <div class="field">
+    <%= f.label :data_end %><br>
+    <%= f.date_select :data_end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -42,7 +42,7 @@ class CofsController < ApplicationController
   def update
     respond_to do |format|
       if @cof.update(cof_params)
-        format.html { redirect_to @cof, notice: 'Cof was successfully updated.' }
+        format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

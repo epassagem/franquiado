@@ -1,0 +1,33 @@
+<h1>Listing consultors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo</th>
+      <th>Data fim</th>
+      <th>Verificador</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @consultors.each do |consultor| %>
+      <tr>
+        <td><%= consultor.interessado_id %></td>
+        <td><%= consultor.arquivo %></td>
+        <td><%= consultor.data_fim %></td>
+        <td><%= consultor.verificador %></td>
+        <td><%= link_to 'Show', consultor %></td>
+        <td><%= link_to 'Edit', edit_consultor_path(consultor) %></td>
+        <td><%= link_to 'Destroy', consultor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Consultor', new_consultor_path %>

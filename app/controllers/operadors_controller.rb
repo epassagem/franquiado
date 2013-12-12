@@ -42,7 +42,7 @@ class OperadorsController < ApplicationController
   def update
     respond_to do |format|
       if @operador.update(operador_params)
-        format.html { redirect_to @operador, notice: 'Operador was successfully updated.' }
+        format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

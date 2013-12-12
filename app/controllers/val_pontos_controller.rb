@@ -42,7 +42,7 @@ class ValPontosController < ApplicationController
   def update
     respond_to do |format|
       if @val_ponto.update(val_ponto_params)
-        format.html { redirect_to @val_ponto, notice: 'Val ponto was successfully updated.' }
+        format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

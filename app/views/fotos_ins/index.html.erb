@@ -1,0 +1,29 @@
+<h1>Listing fotos_ins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Inauguracao</th>
+      <th>Foto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fotos_ins.each do |fotos_in| %>
+      <tr>
+        <td><%= fotos_in.inauguracao_id %></td>
+        <td><%= fotos_in.foto %></td>
+        <td><%= link_to 'Show', fotos_in %></td>
+        <td><%= link_to 'Edit', edit_fotos_in_path(fotos_in) %></td>
+        <td><%= link_to 'Destroy', fotos_in, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fotos in', new_fotos_in_path %>

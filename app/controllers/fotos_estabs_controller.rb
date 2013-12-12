@@ -42,7 +42,7 @@ class FotosEstabsController < ApplicationController
   def update
     respond_to do |format|
       if @fotos_estab.update(fotos_estab_params)
-        format.html { redirect_to @fotos_estab, notice: 'Fotos estab was successfully updated.' }
+        format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

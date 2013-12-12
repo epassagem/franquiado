@@ -25,6 +25,7 @@ class AprovProjsController < ApplicationController
   # POST /aprov_projs.json
   def create
     @aprov_proj = AprovProj.new(aprov_proj_params)
+    
 
     respond_to do |format|
       if @aprov_proj.save
@@ -42,7 +43,7 @@ class AprovProjsController < ApplicationController
   def update
     respond_to do |format|
       if @aprov_proj.update(aprov_proj_params)
-        format.html { redirect_to @aprov_proj, notice: 'Aprov proj was successfully updated.' }
+        format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +70,6 @@ class AprovProjsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def aprov_proj_params
-      params.require(:aprov_proj).permit(:interessado_id, :arquivo_doc)
+      params.require(:aprov_proj).permit(:interessado_id, :arquivo_doc, :fotos_proj)
     end
 end

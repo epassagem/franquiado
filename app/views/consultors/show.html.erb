@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @consultor.interessado_id %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @consultor.arquivo %>
+</p>
+
+<p>
+  <strong>Data fim:</strong>
+  <%= @consultor.data_fim %>
+</p>
+
+<p>
+  <strong>Verificador:</strong>
+  <%= @consultor.verificador %>
+</p>
+
+<%= link_to 'Edit', edit_consultor_path(@consultor) %> |
+<%= link_to 'Back', consultors_path %>

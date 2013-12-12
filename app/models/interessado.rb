@@ -98,12 +98,21 @@ class Interessado < ActiveRecord::Base
   has_many :pagto_taxa, autosave: true
   accepts_nested_attributes_for :pagto_taxa
  
-  has_many :pro_contrato, autosave: true
-  accepts_nested_attributes_for :pro_contrato
+  has_many :pre_contrato, autosave: true
+  accepts_nested_attributes_for :pre_contrato
 
   has_many :operador, autosave: true
   accepts_nested_attributes_for :operador
+  
+  has_many :consultor, autosave: true
+  accepts_nested_attributes_for :consultor
 
+  has_many :professor, autosave: true
+  accepts_nested_attributes_for :professor
+  
+  has_many :coordenador, autosave: true
+  accepts_nested_attributes_for :coordenador
+  
   has_many :val_ponto, autosave: true
   accepts_nested_attributes_for :val_ponto
 
@@ -113,7 +122,26 @@ class Interessado < ActiveRecord::Base
 
   has_many :aprov_proj, autosave: true
   accepts_nested_attributes_for :aprov_proj
+  
+  has_many :fotos_proj, autosave: true
+  accepts_nested_attributes_for :fotos_proj
 
   has_many :aprov_estab, autosave: true
   accepts_nested_attributes_for :aprov_estab
+  
+  has_many :fotos_estab, autosave: true
+  accepts_nested_attributes_for :fotos_estab
+  
+  has_many :contrato, autosave: true
+  accepts_nested_attributes_for :contrato
+  
+  has_many :market, autosave: true
+  accepts_nested_attributes_for :market
+  
+  has_many :inauguracao, autosave: true
+  accepts_nested_attributes_for :inauguracao
+  
+  has_many :fotos_in, autosave: true
+  accepts_nested_attributes_for :fotos_in
+
 end

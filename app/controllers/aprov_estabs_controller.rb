@@ -25,6 +25,7 @@ class AprovEstabsController < ApplicationController
   # POST /aprov_estabs.json
   def create
     @aprov_estab = AprovEstab.new(aprov_estab_params)
+    @fotos_estab = @aprov_estab.fotos_estab.build
 
     respond_to do |format|
       if @aprov_estab.save
@@ -42,7 +43,7 @@ class AprovEstabsController < ApplicationController
   def update
     respond_to do |format|
       if @aprov_estab.update(aprov_estab_params)
-        format.html { redirect_to @aprov_estab, notice: 'Aprov estab was successfully updated.' }
+        format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +70,6 @@ class AprovEstabsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def aprov_estab_params
-      params.require(:aprov_estab).permit(:interessado_id, :arquivo_doc)
+      params.require(:aprov_estab).permit(:interessado_id, :arquivo_doc, :fotos_estab)
     end
 end

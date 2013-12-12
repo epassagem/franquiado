@@ -1,0 +1,33 @@
+<h1>Listing inauguracaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interessado</th>
+      <th>Arquivo doc</th>
+      <th>Data start</th>
+      <th>Data end</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inauguracaos.each do |inauguracao| %>
+      <tr>
+        <td><%= inauguracao.interessado_id %></td>
+        <td><%= inauguracao.arquivo_doc %></td>
+        <td><%= inauguracao.data_start %></td>
+        <td><%= inauguracao.data_end %></td>
+        <td><%= link_to 'Show', inauguracao %></td>
+        <td><%= link_to 'Edit', edit_inauguracao_path(inauguracao) %></td>
+        <td><%= link_to 'Destroy', inauguracao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inauguracao', new_inauguracao_path %>
