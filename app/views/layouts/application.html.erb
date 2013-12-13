@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Expansao</title>
+  <title>Expansao Franquia</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -10,12 +10,12 @@
 
 <nav class="navbar navbar-inverse" role="navigation">
  <div class="navbar-header">
-    <a class="navbar-brand" href="#">Escola da Inteligencia</a>
+    <a class="navbar-brand" href="#">Augusto Cury Cursos</a>
  </div>
 
  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
    <ul class="nav navbar-nav">
-     <li class="active"><a href="/">Home</a></li>
+     
      <li><%= link_to "interessados", interessados_path %> </li>
 	
 	   
@@ -35,8 +35,7 @@
  <div id="conteiner" class="container">
   
 <%= yield %>
-
-<div>
+</div>
 
 </body>
 </html>

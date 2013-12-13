@@ -42,7 +42,7 @@ class ObservsController < ApplicationController
   def update
     respond_to do |format|
       if @observ.update(observ_params)
-        format.html { redirect_to @observ, notice: 'Observ was successfully updated.' }
+         format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

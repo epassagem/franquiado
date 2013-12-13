@@ -37,7 +37,7 @@ class Interessado < ActiveRecord::Base
   has_many :irpj, autosave: true
  accepts_nested_attributes_for :irpj
  
-   has_many :lembrete, autosave: true
+ has_many :lembrete, autosave: true
  accepts_nested_attributes_for :lembrete
  
    has_many :observ, autosave: true

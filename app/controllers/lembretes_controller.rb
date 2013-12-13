@@ -42,7 +42,7 @@ class LembretesController < ApplicationController
   def update
     respond_to do |format|
       if @lembrete.update(lembrete_params)
-        format.html { redirect_to @lembrete, notice: 'Lembrete was successfully updated.' }
+         format.html {  redirect_to :back }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
