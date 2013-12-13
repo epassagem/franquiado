@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131212173011) do
+ActiveRecord::Schema.define(version: 20131213163707) do
 
   create_table "aprov_estabs", force: true do |t|
     t.integer  "interessado_id"
@@ -373,6 +373,14 @@ ActiveRecord::Schema.define(version: 20131212173011) do
   create_table "spcs", force: true do |t|
     t.integer  "interessado_id"
     t.string   "arquivo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_interessados", force: true do |t|
+    t.string   "user_name"
+    t.string   "user_password"
+    t.string   "user_email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

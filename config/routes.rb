@@ -1,6 +1,8 @@
 Franquia::Application.routes.draw do
   
   
+  resources :user_interessados
+
   devise_for :users
 
   

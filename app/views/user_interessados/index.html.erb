@@ -1,0 +1,31 @@
+<h1>Listar Usuários Interessados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Senha</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_interessados.each do |user_interessado| %>
+      <tr>
+        <td><%= user_interessado.user_name %></td>
+        <td><%= user_interessado.user_password %></td>
+        <td><%= user_interessado.user_email %></td>
+        <td><%= link_to 'Visualizar', user_interessado %></td>
+        <td><%= link_to 'Editar', edit_user_interessado_path(user_interessado) %></td>
+        <td><%= link_to 'Excluir', user_interessado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Cadastrar Novo Usuário Interessado', new_user_interessado_path %>
