@@ -2,7 +2,25 @@
 
 <%= will_paginate @interessados %>
 
-
+<div class="row">
+  <!--Lembretes!-->     
+      <div class="panel-body">
+        <label>Lembretes</label>
+        <div class="row">
+          <% @interessados.each do |s| %>
+            <%if s.lembrete.present? %>
+             
+                <div class="alert alert-danger fade in">
+                  <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                    <h4><%= s.nome%></h4>
+                    <p><%= s.observacao%></p>
+                    <p><%= s.data_max%></p>
+                </div>
+            <%end%>
+          <% end %> 
+        </div>           
+      </div>
+</div>
 <table class="table table-striped">
   <thead>
     <tr>
