@@ -98,16 +98,10 @@ Franquia::Application.routes.draw do
 
   resources :cnhs
   
-  #resources :interessados
-  
   resources :carts
   
-  resources :interessados do
-  collection do
-    get :search
-  end
-end
-  
+  resources :interessados
+
 
    root 'interessados#index'
 

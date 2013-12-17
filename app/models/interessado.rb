@@ -1,11 +1,5 @@
 class Interessado < ActiveRecord::Base
-
   self.per_page = 10
-validates_presence_of :interessado_nome
-searchable do
-    text :interessado_nome
-end
- 
 
  has_many :cart, autosave: true
  accepts_nested_attributes_for :cart

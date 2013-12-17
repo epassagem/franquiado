@@ -5,8 +5,7 @@ gem 'rails', '4.0.1'
 gem 'simple_form'
 # Use mysql as the database for Active Record
 gem 'mysql2'
-gem 'sunspot_rails'
-gem 'sunspot_solr' 
+gem 'rails-simple-search'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

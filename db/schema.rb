@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131217122137) do
+ActiveRecord::Schema.define(version: 20131217173239) do
 
   create_table "aprov_estabs", force: true do |t|
     t.integer  "interessado_id"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20131217122137) do
   create_table "aprov_projs", force: true do |t|
     t.integer  "interessado_id"
     t.string   "arquivo_doc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "books", force: true do |t|
+    t.string   "title"
+    t.string   "isbn"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
