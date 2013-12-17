@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131213163707) do
+ActiveRecord::Schema.define(version: 20131217122137) do
 
   create_table "aprov_estabs", force: true do |t|
     t.integer  "interessado_id"
@@ -200,6 +200,7 @@ ActiveRecord::Schema.define(version: 20131213163707) do
     t.date     "data_max"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "estatus",        null: false
   end
 
   create_table "markets", force: true do |t|

@@ -6,10 +6,6 @@ class InteressadosController < ApplicationController
   def index
     @interessados = Interessado.all
     @interessados = Interessado.paginate(:page => params[:page], :per_page => 20)
-    
-    
-    
-    
   end
 
   # GET /interessados/1

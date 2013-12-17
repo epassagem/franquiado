@@ -13,9 +13,8 @@ development:
   encoding: utf8
   database: franquia_development
   pool: 5
-  host: localhost
   username: root
-  #password: obaxdhmojocy
+
   password: Fx9633h!3
   socket: /var/run/mysqld/mysqld.sock
 
@@ -25,21 +24,19 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: franquia_development
+  database: franquia_test
   pool: 5
-  host: localhost
   username: root
-  #password: obaxdhmojocy
+ 
   password: Fx9633h!3
   socket: /var/run/mysqld/mysqld.sock
 
 production:
   adapter: mysql2
   encoding: utf8
-  database: franquia_development
+  database: franquia_production
   pool: 5
-  host: localhost
   username: root
-  #password: obaxdhmojocy
+ 
   password: Fx9633h!3
   socket: /var/run/mysqld/mysqld.sock

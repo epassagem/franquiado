@@ -1,26 +1,97 @@
 <h1>Listing interessados</h1>
 
 <%= will_paginate @interessados %>
-
 <div class="row">
-  <!--Lembretes!-->     
-      <div class="panel-body">
-        <label>Lembretes</label>
-        <div class="row">
-          <% @interessados.each do |s| %>
-            <%if s.lembrete.present? %>
-             
-                <div class="alert alert-danger fade in">
-                  <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
-                    <h4><%= s.nome%></h4>
-                    <p><%= s.observacao%></p>
-                    <p><%= s.data_max%></p>
-                </div>
-            <%end%>
-          <% end %> 
-        </div>           
+  <div class="col-xs-6">
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default" style="height: 10%">
+        <div class="panel-heading" >
+          <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Lembrete">
+          <h4><span class="glyphicon glyphicon-warning-sign" style="margin-right:20px;"></span>Lembretes</h4>
+          </a>
+          </h4>
+        </div>
+        <div id="Lembrete" class="panel-collapse collapse">
+          <!--Lembretes!-->     
+          <div class="panel-body">
+            <label>Lembretes</label>
+            <div class="row">
+              <% @interessados.each do |s| %>
+                <% s.lembrete.each do |p|%>
+                  <%if p.observacao.present? %>
+                    <% if p.data_max > Time.now.to_date && p.estatus == false %>
+                      <div class="col-xs-3">
+                      <div class="alert alert-danger fade in">
+                        <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                        <h4><%= s.interessado_nome%></h4>
+                        <% y = p.data_max - Time.now.to_date%>
+                         <p>Restam apenas  <%= y.to_i%> dias</p>
+                        <h5><%= p.nome%></h5>
+                        <%= link_to 'Exibir', s %>
+                      </div>
+                      </div>
+                    <%end%> 
+                  <%end%>
+                <%end%>
+              <% end %>
+            </div>           
+          </div>
+        </div>
       </div>
-</div>
+    </div><!--end panel panel-default!-->
+  </div>
+  
+   <div class="col-xs-6">
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default" style="height: 10%">
+        <div class="panel-heading" >
+          <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#cof">
+          <h4><span class="glyphicon glyphicon-warning-sign" style="margin-right:20px;"></span>COF</h4>
+          </a>
+          </h4>
+        </div>
+        <div id="cof" class="panel-collapse collapse">
+          <!--COF!-->     
+          <div class="panel-body">
+            <label>COF</label>
+            <div class="row">
+              <% @interessados.each do |s| %>
+                <% s.cof.each do |p|%>
+                  <%if p.data_fim.present? %>
+                    <% y = p.data_fim - p.updated_at.to_date %>
+                   
+                   
+                    <% if y.to_i <= 10 && p.estatus == false%>
+                      <div class="col-xs-3">
+                      <div class="alert alert-danger fade in">
+                        <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                        <h4><%= s.interessado_nome%></h4>
+                        
+                         <p>Restam apenas  <%= y.to_i%> dias</p>
+                       
+                        <%= link_to 'Exibir', s %>
+                      </div>
+                      </div>
+                      
+                    <%end%> 
+                  <%end%>
+                <%end%>
+              <% end %>
+              
+            </div>           
+          </div>
+        </div>
+      </div>
+    </div><!--end panel panel-default!-->
+  </div>
+</div><!--Fim Row Lembrete!-->
+
+
+ 
+
+
 <table class="table table-striped">
   <thead>
     <tr>
