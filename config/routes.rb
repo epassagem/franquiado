@@ -1,10 +1,8 @@
 Franquia::Application.routes.draw do
   
-  
   resources :user_interessados
 
   devise_for :users
-
   
   resources :fotos_ins
 
@@ -43,8 +41,7 @@ Franquia::Application.routes.draw do
   resources :planilhas
 
   resources :interessados
-
-
+  
   resources :cronogramas
 
   resources :proj_arquitetonicos
@@ -101,10 +98,15 @@ Franquia::Application.routes.draw do
 
   resources :cnhs
   
-  resources :interessados
+  #resources :interessados
   
   resources :carts
   
+  resources :interessados do
+  collection do
+    get :search
+  end
+end
   
 
    root 'interessados#index'

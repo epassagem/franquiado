@@ -89,7 +89,11 @@
 </div><!--Fim Row Lembrete!-->
 
 
- 
+ <%= form_tag search_interessados_path, :method => :get do %>
+<p>
+  <%= text_field_tag :query, params[:query] %> <%= submit_tag "Buscar" %>
+</p>
+<% end %>
 
 
 <table class="table table-striped">

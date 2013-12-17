@@ -7,6 +7,17 @@ class InteressadosController < ApplicationController
     @interessados = Interessado.all
     @interessados = Interessado.paginate(:page => params[:page], :per_page => 20)
   end
+  
+def search
+  @inter = Interessado.search do
+    keywords params[:query]
+  end.results
+
+  respond_to do |format|
+    format.html { render :action => "index" }
+    format.xml  { render :xml => @inter }
+  end
+end
 
   # GET /interessados/1
   # GET /interessados/1.json
