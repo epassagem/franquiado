@@ -69,6 +69,6 @@ class LembretesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lembrete_params
-      params.require(:lembrete).permit(:interessado_id, :observacao, :nome, :data_max)
+      params.require(:lembrete).permit(:interessado_id, :observacao, :nome, :data_max, :estatus)
     end
 end
